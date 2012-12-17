@@ -1,0 +1,184 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* Maximus */ = {
+		activeExec = 0;
+		executables = (
+			CE833A3B1499107500AEDFDA /* Maximus */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = CE833A3B1499107500AEDFDA /* Maximus */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* Maximus */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* Maximus */,
+		);
+		codeSenseManager = CE833A4C1499108100AEDFDA /* Code sense */;
+		executables = (
+			CE833A3B1499107500AEDFDA /* Maximus */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					381,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXSymbolsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXSymbolsDataSource_SymbolNameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					16,
+					200,
+					50,
+					284.20849609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXSymbolsDataSource_SymbolTypeIconID,
+					PBXSymbolsDataSource_SymbolNameID,
+					PBXSymbolsDataSource_SymbolTypeID,
+					PBXSymbolsDataSource_ReferenceNameID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 345579739;
+			PBXWorkspaceStateSaveDate = 345579739;
+		};
+		perUserProjectItems = {
+			CE833BA714991D6800AEDFDA = CE833BA714991D6800AEDFDA /* PBXTextBookmark */;
+			CE833BE41499201900AEDFDA = CE833BE41499201900AEDFDA /* PBXTextBookmark */;
+			CE833C07149920E300AEDFDA /* PBXTextBookmark */ = CE833C07149920E300AEDFDA /* PBXTextBookmark */;
+		};
+		sourceControlManager = CE833A4B1499108100AEDFDA /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	32CA4F630368D1EE00C91783 /* Maximus_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {850, 514}}";
+			sepNavSelRange = "{537, 0}";
+			sepNavVisRange = "{0, 537}";
+			sepNavWindowFrame = "{{115, 100}, {909, 642}}";
+		};
+	};
+	CE833A3B1499107500AEDFDA /* Maximus */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Maximus;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	CE833A4B1499108100AEDFDA /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	CE833A4C1499108100AEDFDA /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	CE833AA6149912CC00AEDFDA /* EAGLView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {866, 611}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1053}";
+			sepNavWindowFrame = "{{38, 78}, {909, 642}}";
+		};
+	};
+	CE833AA8149912CC00AEDFDA /* MGraphicsiOS.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {850, 611}}";
+			sepNavSelRange = "{218, 0}";
+			sepNavVisRange = "{0, 675}";
+			sepNavWindowFrame = "{{38, 78}, {909, 642}}";
+		};
+	};
+	CE833AC81499137800AEDFDA /* MaximusAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {572, 364}}";
+			sepNavSelRange = "{138, 0}";
+			sepNavVisRange = "{0, 636}";
+			sepNavWindowFrame = "{{15, 99}, {909, 642}}";
+		};
+	};
+	CE833AC91499137800AEDFDA /* MaximusAppDelegate.mm */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            l = message;\n            r = \"{1632, 11}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 1757}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {850, 1066}}";
+			sepNavSelRange = "{228, 0}";
+			sepNavVisRange = "{0, 868}";
+			sepNavWindowFrame = "{{15, 99}, {909, 642}}";
+		};
+	};
+	CE833BA714991D6800AEDFDA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE833AC81499137800AEDFDA /* MaximusAppDelegate.h */;
+		name = "MaximusAppDelegate.h: 8";
+		rLen = 0;
+		rLoc = 138;
+		rType = 0;
+		vrLen = 637;
+		vrLoc = 0;
+	};
+	CE833BE41499201900AEDFDA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE833AC81499137800AEDFDA /* MaximusAppDelegate.h */;
+		name = "MaximusAppDelegate.h: 8";
+		rLen = 0;
+		rLoc = 138;
+		rType = 0;
+		vrLen = 637;
+		vrLoc = 0;
+	};
+	CE833C07149920E300AEDFDA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE833AC81499137800AEDFDA /* MaximusAppDelegate.h */;
+		name = "MaximusAppDelegate.h: 8";
+		rLen = 0;
+		rLoc = 138;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 0;
+	};
+}

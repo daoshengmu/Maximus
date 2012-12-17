@@ -1,0 +1,30 @@
+//
+// Prefix header for all source files of the 'Maximous' target in the 'Maximous' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#undef __MOS_IOS__
+#else
+#define __MOS_IOS__
+#endif
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#endif
+
+#ifdef __cplusplus 
+#include <memory>
+#include <assert.h>
+#include <math.h>
+#include "MUtils.h"	
+#endif
+
+#ifdef Win32
+#define __MOS_WINDOWS__
+#else
+#undef __MOS_WINDOWS__
+#endif
