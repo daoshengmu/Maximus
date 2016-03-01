@@ -1,6 +1,6 @@
 /*
  *  MVector3D.h
- *  Maximous
+ *  Maximus
  *
  *  Created by User on 5/22/11.
  *  Copyright 2011 Daosheng Mu. All rights reserved.
@@ -36,7 +36,7 @@ public:
 	// @params: yVal y element 
 	// @params: yVal z element 
 	//--------------------------------
- 	cMVector3D( M_IN Type xVal, M_IN Type yVal, M_IN Type zVal )
+ 	cMVector3D(Type xVal, Type yVal, Type zVal)
 	: x(xVal), y(yVal), z(zVal) {};
 	
 	//---------------------------------------∫∫-----------------------------------------------
@@ -44,7 +44,7 @@ public:
     /// 
     /// @param rhs copy from
     //--------------------------------------------------------------------------------------
-	cMVector3D( M_IN const cMVector3D<Type>& rhs )
+	cMVector3D(const cMVector3D<Type>& rhs)
 	: x(rhs.x), y(rhs.y), z(rhs.z) {};
 	
 	
@@ -54,6 +54,15 @@ public:
 		y *= val;
 		z *= val;
 	}
+    
+    cMVector3D<Type>& operator *= (Type val)
+    {
+        x *= val;
+        y *= val;
+        z *= val;
+        
+        return (*this);
+    }
 
 };
 

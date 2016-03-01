@@ -1,0 +1,11 @@
+/*
+ Copyright (C) 2015 Apple Inc. All Rights Reserved.
+ See LICENSE.txt for this sample’s licensing information
+ 
+ Abstract:
+ Prefix header for all source files of the 'DeferredShading' target in the 'DeferredShading' project.
+ */
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

@@ -1,6 +1,6 @@
 /*
  *  MUtils.h
- *  Maximous
+ *  Maximus
  *
  *  Created by User on 5/29/11.
  *  Copyright 2011 Daosheng Mu. All rights reserved.
@@ -19,5 +19,7 @@
 
 typedef cMVector3D<float> cMVector3Df;
 typedef cMMatrix3D<float> cMMatrix3Df;
+
+typedef unsigned short uint16;
 
 #endif

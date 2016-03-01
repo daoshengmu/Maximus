@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:DeferredShading/DeferredShading.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MaximusOSX_1/MaximusOSX.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:GLFullScreen/GLFullScreen.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:/Projects/Maximus/projects/BasicSample/BasicSample.xcodeproj">
+   </FileRef>
+</Workspace>

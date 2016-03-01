@@ -1,13 +1,13 @@
 /*
  *  MRenderiOS.cpp
- *  Maximous
+ *  Maximus
  *
  *  Created by User on 6/6/11.
  *  Copyright 2011 Daosheng Mu. All rights reserved.
  *
  */
 
-#include "iOS/MRenderiOS.h"
+#import "iOS/MRenderiOS.h"
 #import	"iOS/MGraphicsiOS.h"
 
 

@@ -1,6 +1,6 @@
 /*
  *  MaxiFactory.cpp
- *  Maximous
+ *  Maximus
  *
  *  Created by User on 6/6/11.
  *  Copyright 2011 Daosheng Mu. All rights reserved.
@@ -8,13 +8,31 @@
  */
 
 #include "factory/MaxiFactory.h"
-#ifdef __MOS_IOS__
-#include "iOS/MRenderiOS.h"
-#endif
+#include "MRender.h"
 
-#include "interface/IMRender.h"
-
-IMRender* cMaxiFactory::createRenderer( void )
+namespace Maximus
 {
-	return new cMRenderiOS();//::instance();  // need to be del.
+    
+cMaxiFactory::cMaxiFactory()
+{
+    
+}
+
+cMaxiFactory::~cMaxiFactory()
+{
+    
+}
+
+//cMaxiFactory& operator = (const cMaxiFactory& rhs)
+//{
+//    this = rhs;
+//    return this;
+//}
+
+cMRender* cMaxiFactory::createRenderer()
+{
+    static cMRender render;
+    return &render;//::instance();  // need to be del.
+}
+
 }

@@ -1,6 +1,6 @@
 //
 //  MGraphicsiOS.h
-//  Maximous
+//  Maximus
 //
 //  Created by User on 6/5/11.
 //  Copyright 2011 Daosheng Mu. All rights reserved.

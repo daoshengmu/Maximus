@@ -1,6 +1,6 @@
 /*
  *  MCamera.h
- *  Maximous
+ *  Maximus
  *
  *  Created by User on 6/5/11.
  *  Copyright 2011 Daosheng Mu. All rights reserved.
@@ -12,16 +12,18 @@
 #include "utils/MUtils.h"
 #include "primitives/MObject3D.h"
 
+namespace Maximus {
+
 enum EM_CAMERATYPE {
-	eEM_Ct_Perspective,
-	eEM_Ct_Orthogonal
+	Ct_Perspective,
+	Ct_Orthogonal
 };
 
-class cMCamera3D: public cMObject3D
+class cMCamera: public cMObject3D
 {
 	
 public:
-	cMCamera3D(): _cameraType( eEM_Ct_Perspective ), _fovX(0), _fovY(0),
+    cMCamera(): _cameraType( EM_CAMERATYPE::Ct_Perspective ), _fovX(0), _fovY(0),
 				  _near(1), _far(500) {};
 	
 // --- private member attribute
@@ -44,5 +46,7 @@ private:
 public:
 	virtual void update();
 };
+
+}
 
 #endif

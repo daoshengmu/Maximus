@@ -1,6 +1,6 @@
 /*
  *  MCamera.cpp
- *  Maximous
+ *  Maximus
  *
  *  Created by User on 6/5/11.
  *  Copyright 2011 Daosheng Mu. All rights reserved.
@@ -9,8 +9,10 @@
 
 #include "camera/MCamera3D.h"
 
+namespace Maximous
+{
 
-void cMCamera3D::_setViewMtx()
+void cMCamera::_setViewMtx()
 {	
 	//float view[16] = { worldMtx_[0], worldMtx_[1], worldMtx_[2], worldMtx_[3], 
 //					   worldMtx_[4], worldMtx_[5], worldMtx_[6], worldMtx_[7],
@@ -28,7 +30,7 @@ void cMCamera3D::_setViewMtx()
 	_viewMtx.translate( *pos );	  // need to check...
 }
 
-void cMCamera3D::_setProjMtx()
+void cMCamera::_setProjMtx()
 {
 	if ( _cameraType == eEM_Ct_Perspective )
 	{
@@ -64,11 +66,13 @@ void cMCamera3D::_setProjMtx()
 
 }
 
-void cMCamera3D::update()
+void cMCamera::update()
 {
 	if ( update_ )
 	{
 		_setViewMtx();
 		update_ = false;
 	}
+}
+    
 }
