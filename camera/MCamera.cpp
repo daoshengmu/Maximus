@@ -7,32 +7,33 @@
  *
  */
 
-#include "camera/MCamera3D.h"
+#include "camera/MCamera.h"
+#include <Math.h>
 
-namespace Maximous
+namespace Maximus
 {
 
-void cMCamera::_setViewMtx()
+void cMCamera::_SetViewMtx()
 {	
-	//float view[16] = { worldMtx_[0], worldMtx_[1], worldMtx_[2], worldMtx_[3], 
+//float view[16] = { worldMtx_[0], worldMtx_[1], worldMtx_[2], worldMtx_[3],
 //					   worldMtx_[4], worldMtx_[5], worldMtx_[6], worldMtx_[7],
 //					   worldMtx_[8], worldMtx_[9], worldMtx_[10], worldMtx_[11],
 //								0.0,		  0.0,			 0.0,			0.0 };
 	
 	//_viewMtx.setRawData( view, 16 );
-	_viewMtx = cMMatrix3Df( worldMtx_[0], worldMtx_[1], worldMtx_[2], worldMtx_[3], 
-						   worldMtx_[4], worldMtx_[5], worldMtx_[6], worldMtx_[7],
-						   worldMtx_[8], worldMtx_[9], worldMtx_[10], worldMtx_[11],
-						            0.0,		  0.0,			 0.0,			0.0 );
-	
-	const cMVector3Df* pos = getPosition();
-		
+//	_viewMtx = cMMatrix3Df( worldMtx_[0], worldMtx_[1], worldMtx_[2], worldMtx_[3], 
+//						   worldMtx_[4], worldMtx_[5], worldMtx_[6], worldMtx_[7],
+//						   worldMtx_[8], worldMtx_[9], worldMtx_[10], worldMtx_[11],
+//						            0.0,		  0.0,			 0.0,			0.0 );
+
+    _viewMtx = cMMatrix3Df();
+	const cMVector3Df* pos = GetPosition();
 	_viewMtx.translate( *pos );	  // need to check...
 }
 
-void cMCamera::_setProjMtx()
+void cMCamera::_SetProjMtx()
 {
-	if ( _cameraType == eEM_Ct_Perspective )
+	if ( _cameraType == Ct_Perspective )
 	{
 		float fov_x;
 		float fov_y;
@@ -47,7 +48,7 @@ void cMCamera::_setProjMtx()
 								  0.0f                , 0.0f                , Q             , 1.0f,
 								  0.0f                , 0.0f                , (-_near * Q) , 0.0f );	
 	}
-	else if ( _cameraType == eEM_Ct_Orthogonal )
+	else if ( _cameraType == Ct_Orthogonal )
 	{
 		float l = -_viewportW * 0.5;
 		float r = _viewportW * 0.5;
@@ -66,13 +67,30 @@ void cMCamera::_setProjMtx()
 
 }
 
-void cMCamera::update()
+void cMCamera::Update()
 {
-	if ( update_ )
+	if (update_)
 	{
-		_setViewMtx();
+		_SetViewMtx();
+        _SetProjMtx();
 		update_ = false;
 	}
 }
     
+const cMMatrix3Df* cMCamera::GetViewMatrix() const
+{
+    return &_viewMtx;
+}
+    
+const cMMatrix3Df* cMCamera::GetProjMatrix() const
+{
+    return &_projMtx;
+}
+    
+void cMCamera::SetViewPort(int width, int height)
+{
+    _viewportW = width;
+    _viewportH = height;
+}
+
 }

@@ -11,11 +11,7 @@
 		256AC3DA0F4B6AC300CF3369 /* BasicSampleAppDelegatee.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* BasicSampleAppDelegatee.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		AF084FB01B1666BB00AF47F7 /* matrixUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = AFC0BC451AD243A300D38A48 /* matrixUtil.c */; };
 		AF679AB31913014F00C2BA20 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF679AB21913014F00C2BA20 /* GLKit.framework */; };
-		AFC0BC4A1AD246EA00D38A48 /* vectorUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = AFC0BC481AD246EA00D38A48 /* vectorUtil.c */; };
-		B701D5711C834C6500FEC77D /* MaxiFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B701D5701C834C6500FEC77D /* MaxiFactory.cpp */; };
-		B701D5731C834D9000FEC77D /* MGraphicsOSX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B701D5721C834D9000FEC77D /* MGraphicsOSX.cpp */; };
 		B71D0C081C802E5C004E3F3E /* camera in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C011C802E5C004E3F3E /* camera */; };
 		B71D0C091C802E5C004E3F3E /* factory in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C021C802E5C004E3F3E /* factory */; };
 		B71D0C0A1C802E5C004E3F3E /* interface in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C031C802E5C004E3F3E /* interface */; };
@@ -23,9 +19,12 @@
 		B71D0C0C1C802E5C004E3F3E /* primitives in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C051C802E5C004E3F3E /* primitives */; };
 		B71D0C0D1C802E5C004E3F3E /* Shaders in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C061C802E5C004E3F3E /* Shaders */; };
 		B71D0C0E1C802E5C004E3F3E /* utils in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C071C802E5C004E3F3E /* utils */; };
+		B75B7F0B1D747D7D005AEF0D /* MGraphicsOSX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75B7F0A1D747D7D005AEF0D /* MGraphicsOSX.cpp */; };
+		B75B7F0D1D747D89005AEF0D /* MaxiFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75B7F0C1D747D89005AEF0D /* MaxiFactory.cpp */; };
+		B75B7F101D747FA2005AEF0D /* GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = B75B7F0F1D747FA2005AEF0D /* GLView.mm */; };
+		B75B7F121D748C15005AEF0D /* MCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75B7F111D748C15005AEF0D /* MCamera.cpp */; };
+		B75B7F141D748D62005AEF0D /* MObject3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75B7F131D748D62005AEF0D /* MObject3D.cpp */; };
 		B76F1C101C81E5F10011E3D2 /* MRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B76F1C0E1C81E5F10011E3D2 /* MRender.cpp */; };
-		E9103CA411A204AE001F8C41 /* GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E9103CA011A204AE001F8C41 /* GLView.mm */; };
-		E9103CA511A204AE001F8C41 /* renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9103CA111A204AE001F8C41 /* renderer.cpp */; };
 		E939ED5B1267DC1B0071590E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E939ED5A1267DC1B0071590E /* QuartzCore.framework */; };
 		E9554F0111A25E4B00427395 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9554F0011A25E4B00427395 /* GLUT.framework */; };
 		E9554F0811A25E6500427395 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9554F0711A25E6500427395 /* OpenGL.framework */; };
@@ -46,16 +45,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* BasicSample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BasicSample-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* BasicSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF084FAF1B16618A00AF47F7 /* GeoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoUtils.h; sourceTree = "<group>"; };
 		AF084FB11B16768100AF47F7 /* BasicSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BasicSample.entitlements; sourceTree = "<group>"; };
 		AF3CBE771984219E002D1607 /* teapot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teapot.h; sourceTree = "<group>"; };
 		AF679AB21913014F00C2BA20 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		AFC0BC451AD243A300D38A48 /* matrixUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrixUtil.c; sourceTree = "<group>"; };
-		AFC0BC461AD243A300D38A48 /* matrixUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrixUtil.h; sourceTree = "<group>"; };
-		AFC0BC481AD246EA00D38A48 /* vectorUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vectorUtil.c; sourceTree = "<group>"; };
-		AFC0BC491AD246EA00D38A48 /* vectorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vectorUtil.h; sourceTree = "<group>"; };
-		B701D5701C834C6500FEC77D /* MaxiFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MaxiFactory.cpp; path = ../../factory/MaxiFactory.cpp; sourceTree = "<group>"; };
-		B701D5721C834D9000FEC77D /* MGraphicsOSX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MGraphicsOSX.cpp; path = ../../OSX/MGraphicsOSX.cpp; sourceTree = "<group>"; };
 		B71D0C011C802E5C004E3F3E /* camera */ = {isa = PBXFileReference; lastKnownFileType = folder; name = camera; path = ../../camera; sourceTree = "<group>"; };
 		B71D0C021C802E5C004E3F3E /* factory */ = {isa = PBXFileReference; lastKnownFileType = folder; name = factory; path = ../../factory; sourceTree = "<group>"; };
 		B71D0C031C802E5C004E3F3E /* interface */ = {isa = PBXFileReference; lastKnownFileType = folder; name = interface; path = ../../interface; sourceTree = "<group>"; };
@@ -64,12 +56,14 @@
 		B71D0C061C802E5C004E3F3E /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Shaders; path = ../../Shaders; sourceTree = "<group>"; };
 		B71D0C071C802E5C004E3F3E /* utils */ = {isa = PBXFileReference; lastKnownFileType = folder; name = utils; path = ../../utils; sourceTree = "<group>"; };
 		B71D0C0F1C802EF7004E3F3E /* BasicShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicShader.h; sourceTree = "<group>"; };
+		B75B7F0A1D747D7D005AEF0D /* MGraphicsOSX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MGraphicsOSX.cpp; path = ../../OSX/MGraphicsOSX.cpp; sourceTree = "<group>"; };
+		B75B7F0C1D747D89005AEF0D /* MaxiFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MaxiFactory.cpp; path = ../../factory/MaxiFactory.cpp; sourceTree = "<group>"; };
+		B75B7F0E1D747FA2005AEF0D /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLView.h; path = ../../OSX/GLView.h; sourceTree = "<group>"; };
+		B75B7F0F1D747FA2005AEF0D /* GLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GLView.mm; path = ../../OSX/GLView.mm; sourceTree = "<group>"; };
+		B75B7F111D748C15005AEF0D /* MCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCamera.cpp; path = ../../camera/MCamera.cpp; sourceTree = "<group>"; };
+		B75B7F131D748D62005AEF0D /* MObject3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MObject3D.cpp; path = ../../primitives/MObject3D.cpp; sourceTree = "<group>"; };
 		B76F1C0E1C81E5F10011E3D2 /* MRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MRender.cpp; path = ../../MRender.cpp; sourceTree = "<group>"; };
 		B76F1C0F1C81E5F10011E3D2 /* MRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRender.h; path = ../../MRender.h; sourceTree = "<group>"; };
-		E9103C9F11A204AE001F8C41 /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
-		E9103CA011A204AE001F8C41 /* GLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLView.mm; sourceTree = "<group>"; };
-		E9103CA111A204AE001F8C41 /* renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = renderer.cpp; sourceTree = "<group>"; };
-		E9103CA211A204AE001F8C41 /* renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = renderer.h; sourceTree = "<group>"; };
 		E939ED5A1267DC1B0071590E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E9554F0011A25E4B00427395 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
 		E9554F0711A25E6500427395 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
@@ -102,13 +96,8 @@
 			children = (
 				B701D56F1C834C5600FEC77D /* Maximus */,
 				B71D0C0F1C802EF7004E3F3E /* BasicShader.h */,
-				E9103CA211A204AE001F8C41 /* renderer.h */,
-				E9103CA111A204AE001F8C41 /* renderer.cpp */,
-				E9103C9F11A204AE001F8C41 /* GLView.h */,
-				E9103CA011A204AE001F8C41 /* GLView.mm */,
 				256AC3D80F4B6AC300CF3369 /* BasicSampleAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* BasicSampleAppDelegatee.m */,
-				AF7CC3BB1B191BEF00F5AF65 /* Utilities */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -184,18 +173,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AF7CC3BB1B191BEF00F5AF65 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				AF084FAF1B16618A00AF47F7 /* GeoUtils.h */,
-				AFC0BC451AD243A300D38A48 /* matrixUtil.c */,
-				AFC0BC461AD243A300D38A48 /* matrixUtil.h */,
-				AFC0BC481AD246EA00D38A48 /* vectorUtil.c */,
-				AFC0BC491AD246EA00D38A48 /* vectorUtil.h */,
-			);
-			name = Utilities;
-			sourceTree = "<group>";
-		};
 		AF7CC3BC1B191C2000F5AF65 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,8 +188,12 @@
 		B701D56F1C834C5600FEC77D /* Maximus */ = {
 			isa = PBXGroup;
 			children = (
-				B701D5721C834D9000FEC77D /* MGraphicsOSX.cpp */,
-				B701D5701C834C6500FEC77D /* MaxiFactory.cpp */,
+				B75B7F131D748D62005AEF0D /* MObject3D.cpp */,
+				B75B7F111D748C15005AEF0D /* MCamera.cpp */,
+				B75B7F0E1D747FA2005AEF0D /* GLView.h */,
+				B75B7F0F1D747FA2005AEF0D /* GLView.mm */,
+				B75B7F0C1D747D89005AEF0D /* MaxiFactory.cpp */,
+				B75B7F0A1D747D7D005AEF0D /* MGraphicsOSX.cpp */,
 			);
 			name = Maximus;
 			sourceTree = "<group>";
@@ -321,14 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				B701D5731C834D9000FEC77D /* MGraphicsOSX.cpp in Sources */,
-				AFC0BC4A1AD246EA00D38A48 /* vectorUtil.c in Sources */,
+				B75B7F141D748D62005AEF0D /* MObject3D.cpp in Sources */,
+				B75B7F0D1D747D89005AEF0D /* MaxiFactory.cpp in Sources */,
+				B75B7F121D748C15005AEF0D /* MCamera.cpp in Sources */,
+				B75B7F0B1D747D7D005AEF0D /* MGraphicsOSX.cpp in Sources */,
+				B75B7F101D747FA2005AEF0D /* GLView.mm in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* BasicSampleAppDelegatee.m in Sources */,
-				E9103CA411A204AE001F8C41 /* GLView.mm in Sources */,
 				B76F1C101C81E5F10011E3D2 /* MRender.cpp in Sources */,
-				AF084FB01B1666BB00AF47F7 /* matrixUtil.c in Sources */,
-				E9103CA511A204AE001F8C41 /* renderer.cpp in Sources */,
-				B701D5711C834C6500FEC77D /* MaxiFactory.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

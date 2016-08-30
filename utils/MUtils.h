@@ -22,4 +22,6 @@ typedef cMMatrix3D<float> cMMatrix3Df;
 
 typedef unsigned short uint16;
 
+#include <assert.h>
+
 #endif

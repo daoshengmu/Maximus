@@ -18,7 +18,6 @@ class OpenGLRenderer;
 typedef struct _CallbackContext
 {
 	NSOpenGLContext* ctx;
-	//OpenGLRenderer* renderer;
     cMRender* maxiRenderer;
 } CallbackContext;
 

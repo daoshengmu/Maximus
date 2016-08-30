@@ -33,11 +33,11 @@ public:
     //--------------------------------------------------------------------------------------
 	virtual ~cMObject3D();
 	
-	virtual void update();
+	virtual void Update();
 
-	const cMVector3Df* getPosition() const;
+	const cMVector3Df* GetPosition() const;
 	
-	void getPosition( cMVector3Df* vect );
+	void GetPosition( cMVector3Df* vect );
 };
 
 #endif

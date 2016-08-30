@@ -45,7 +45,7 @@ public:
 	//--------------------------------
 	// @breif: Copy constructor
 	//--------------------------------
-	cMMatrix3D(  const cMMatrix3D<Type>&rhs )
+	cMMatrix3D( const cMMatrix3D<Type>&rhs )
 	{
 		const Type* v = rhs.getRawData();
 		

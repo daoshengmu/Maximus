@@ -18,15 +18,15 @@ cMObject3D::cMObject3D()
 cMObject3D::~cMObject3D()
 {}
 
-void cMObject3D::update()
+void cMObject3D::Update()
 {}
 
-const cMVector3Df* cMObject3D::getPosition() const
+const cMVector3Df* cMObject3D::GetPosition() const
 {
 	return &_origin;
 }
 
-void cMObject3D::getPosition( cMVector3Df* vect )
+void cMObject3D::GetPosition( cMVector3Df* vect )
 {
-	memcpy( vect, &_origin, sizeof( _origin ) );
+	memcpy(vect, &_origin, sizeof(_origin));
 }

@@ -23,9 +23,11 @@ class cMCamera: public cMObject3D
 {
 	
 public:
-    cMCamera(): _cameraType( EM_CAMERATYPE::Ct_Perspective ), _fovX(0), _fovY(0),
+    cMCamera(): _cameraType(EM_CAMERATYPE::Ct_Orthogonal), _fovX(0), _fovY(0),
 				  _near(1), _far(500) {};
 	
+    ~cMCamera() {}
+    
 // --- private member attribute
 private:
 	cMMatrix3Df		_viewMtx;
@@ -35,18 +37,21 @@ private:
 	float			_fovY;
 	float			_near;
 	float			_far;
-	float			_viewportW;
-	float			_viewportH;
+	int             _viewportW;
+	int             _viewportH;
 		
 // --- private member function
 private:
-	void _setViewMtx();
-	void _setProjMtx();
+	void _SetViewMtx();
+	void _SetProjMtx();
 	
 public:
-	virtual void update();
+	virtual void Update();
+    const cMMatrix3Df* GetViewMatrix() const;
+    const cMMatrix3Df* GetProjMatrix() const;
+    void SetViewPort(int width, int height);
 };
 
-}
+} // End of namespce Maximus
 
 #endif

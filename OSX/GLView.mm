@@ -9,6 +9,7 @@
 
 #import "GLView.h"
 #include "factory/MaxiFactory.h"
+#include "camera/MCamera.h"
 
 #define k1KeyCode 18
 #define k2KeyCode 19
@@ -18,14 +19,14 @@
 
 using namespace Maximus;
 
-static CVReturn Heartbeat (		CVDisplayLinkRef displayLink,
-								const CVTimeStamp *inNow,
-								const CVTimeStamp *inOutputTime,
-								CVOptionFlags flagsIn,
-								CVOptionFlags *flagsOut,
-								void *displayLinkContext)
+static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
+                          const CVTimeStamp *inNow,
+                          const CVTimeStamp *inOutputTime,
+                          CVOptionFlags flagsIn,
+                          CVOptionFlags *flagsOut,
+                          void *displayLinkContext )
 {
-	CallbackContext* ctx = (CallbackContext*) displayLinkContext;
+    CallbackContext* ctx = (CallbackContext*) displayLinkContext;
 	CGLSetCurrentContext((CGLContextObj) [ctx->ctx CGLContextObj]);
     ctx->maxiRenderer->Draw();
 	CGLFlushDrawable((CGLContextObj) [ctx->ctx CGLContextObj]);
