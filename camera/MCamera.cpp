@@ -14,21 +14,17 @@ namespace Maximus
 {
 
 void cMCamera::_SetViewMtx()
-{	
-//float view[16] = { worldMtx_[0], worldMtx_[1], worldMtx_[2], worldMtx_[3],
-//					   worldMtx_[4], worldMtx_[5], worldMtx_[6], worldMtx_[7],
-//					   worldMtx_[8], worldMtx_[9], worldMtx_[10], worldMtx_[11],
-//								0.0,		  0.0,			 0.0,			0.0 };
-	
-	//_viewMtx.setRawData( view, 16 );
-//	_viewMtx = cMMatrix3Df( worldMtx_[0], worldMtx_[1], worldMtx_[2], worldMtx_[3], 
-//						   worldMtx_[4], worldMtx_[5], worldMtx_[6], worldMtx_[7],
-//						   worldMtx_[8], worldMtx_[9], worldMtx_[10], worldMtx_[11],
-//						            0.0,		  0.0,			 0.0,			0.0 );
+{
+    cMVector3Df origin( *GetPosition() );
+    origin *= -1;
+	_viewMtx.SetItems( worldMtx_[0], worldMtx_[4], worldMtx_[8], 0.0,
+                       worldMtx_[1], worldMtx_[5], worldMtx_[9], 0.0,
+                       worldMtx_[2], worldMtx_[6], worldMtx_[10], 0.0,
+                           origin.x,     origin.y,      origin.z, 1.0 );
 
-    _viewMtx = cMMatrix3Df();
-	const cMVector3Df* pos = GetPosition();
-	_viewMtx.translate( *pos );	  // need to check...
+   // _viewMtx = cMMatrix3Df();
+	//const cMVector3Df* pos = GetPosition();
+	//_viewMtx.translate( *pos );	  // need to check...
 }
 
 void cMCamera::_SetProjMtx()
@@ -46,7 +42,7 @@ void cMCamera::_SetProjMtx()
 		_projMtx = cMMatrix3Df(  1.0f/tan(fov_x*0.5f), 0.0f                , 0.0f          , 0.0f,
 								  0.0f                , 1.0f/tan(fov_y*0.5f), 0.0f          , 0.0f,
 								  0.0f                , 0.0f                , Q             , 1.0f,
-								  0.0f                , 0.0f                , (-_near * Q) , 0.0f );	
+								  0.0f                , 0.0f                , (-_near * Q) , 0.0f );
 	}
 	else if ( _cameraType == Ct_Orthogonal )
 	{
@@ -62,7 +58,7 @@ void cMCamera::_SetProjMtx()
 	}
 	else 
 	{
-		assert( 0 ); // "unKnown camera type"
+		assert(0 && "unKnown camera type");
 	}
 
 }

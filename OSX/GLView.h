@@ -7,13 +7,13 @@
  */
 
 
-#import <Cocoa/Cocoa.h>
-#import <QuartzCore/QuartzCore.h>
+//#import <Cocoa/Cocoa.h>
+//#import <QuartzCore/QuartzCore.h>
 #include "MRender.h"
 
 using namespace Maximus;
 
-class OpenGLRenderer;
+//class OpenGLRenderer;
 
 typedef struct _CallbackContext
 {

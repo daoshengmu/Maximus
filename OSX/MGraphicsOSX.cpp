@@ -13,6 +13,7 @@
 #endif
 #include "utils/MUtils.h"
 #include "OSX/MGraphicsOSX.h"
+#include "context/ContextOSX.h"
 
 
 #define M_LOG(x) do { \
@@ -112,6 +113,13 @@ unsigned short *indexData = NULL;
     
 void cMGraphicsOSX::Init()
 {
+#ifdef __MOS_OSX__
+    //_context = new ContextOSX();
+#else
+#error "TODO: You need to new other Context for other platform..."
+#endif
+   // _context->Init();
+    
     // Create Rect vertex / index buffer
     float vertexArray[] = {
         -0.5, 0.5, -0.5, 1, 0, 1, 1,
@@ -144,6 +152,8 @@ void cMGraphicsOSX::Init()
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, numIndices * sizeof(uint16), indexData, GL_STATIC_DRAW);
     glError();
     free(indexData);
+    
+    BeginFrame();
 }
 
 GLuint vao;
@@ -187,8 +197,11 @@ void cMGraphicsOSX::BeginFrame()
     glClearColor( 0.0f, 1.0f, 0.0f, 1.0f );
     glClearDepth( 1.0f );
     glClearStencil( 0 );
-    //glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT );
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    GLenum e = glCheckFramebufferStatus(GL_FRAMEBUFFER);
+    e = glCheckFramebufferStatusEXT(GL_FRAMEBUFFER);
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT );
+    e = glCheckFramebufferStatusEXT(GL_FRAMEBUFFER);
     glError();
 }
 
@@ -234,7 +247,7 @@ GShader cMGraphicsOSX::CreateShader(const char *vShader, const char *fShader)
         //We don't need the shader anymore.
         glDeleteShader(vertexShader);
         //Use the infoLog as you see fit.
-        assert( 0 && "ContextOGL:: Create vertex shader error" );
+        assert( 0 && infoLog );
         return NULL;
     }
     
@@ -250,7 +263,7 @@ GShader cMGraphicsOSX::CreateShader(const char *vShader, const char *fShader)
         //We don't need the shader anymore.
         glDeleteShader(fragmentShader);
         //Use the infoLog as you see fit.
-        assert( 0 && "ContextOGL:: Create fragment shader error" );
+        assert( 0 && infoLog );
         return NULL;
     }
     

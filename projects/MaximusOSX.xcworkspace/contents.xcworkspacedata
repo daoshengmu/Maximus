@@ -5,9 +5,6 @@
       location = "group:DeferredShading/DeferredShading.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:MaximusOSX_1/MaximusOSX.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:GLFullScreen/GLFullScreen.xcodeproj">
    </FileRef>
    <FileRef

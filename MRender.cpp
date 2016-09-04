@@ -10,7 +10,7 @@
 #include "utils/MMath.h"
 #include "OSX/MGraphicsOSX.h"
 #include "camera/MCamera.h"
-#include "BasicShader.h"
+#include "shaders/BasicShader.h"
 
 namespace Maximus {
     
@@ -46,30 +46,6 @@ void cMRender::Init(int width, int height)
     _graphics->Init();
     _camera->SetViewPort(width, height);
     
-//    // Init MVP matrix
-//    float l, r, b, t;
-//    float far = 1000.0f, near = 1.0f;
-//    
-//    l = (float)-width / 2;
-//    r = (float)width / 2;
-//    b = (float)-height / 2;
-//    t = (float)height / 2;
-//    
-//    cMMatrix3D<float> projMtx(
-//                              2.0f/(r-l)  , 0.0f         , 0.0f                 , 0.0f,
-//                              0.0f	      , 2.0f/(t-b)   , 0.0f                 , 0.0f,
-//                              0.0f        , 0.0f         , -2.0f/(far - near)    , 0.0f,
-//                              -(l+r)/(r-l), -(t+b)/(t-b) , -(far+near)/(far-near)     , 1.0f );  // orthogonal matrix
-//    
-//    
-//    float fov_x = 90.0f;
-//    float fov_y = 73.74f;
-//    float Q;
-//    
-//    fov_x =  M_DEGREE_TO_RADIAN( fov_x );
-//    fov_y =  M_DEGREE_TO_RADIAN( fov_y );
-//    Q     =  far / (far - near);
-    
     // Init shader
     BasicShader shader;
     shaderProgram = _graphics->CreateShader(shader.GetVertexShader()->c_str(), shader.GetFragmentShader()->c_str());
@@ -79,11 +55,17 @@ void cMRender::SetCamera(cMCamera *pCamera)
 {
     _camera = pCamera;
 }
+    
+cMCamera* cMRender::GetCamera()
+{
+    return _camera;
+}
 
 void cMRender::SetViewport(int x, int y, int w, int h)
 {
     _viewport.Set(x, y, w, h);
     _graphics->SetViewport(x, y, w, h);
+    _camera->SetViewPort(w, h);
     // XXX TODO reset the projection matrix
 }
 
@@ -101,16 +83,13 @@ void cMRender::Draw()
     
     // For loop draw list
     cMMatrix3D<float> modelMtx;
-    
-    modelMtx.scale(cMVector3D<float>(1000,1000,1000));
-    modelMtx.translate( 0, 0, -20 );
-    
-//    _mvpMatrix = modelMtx;
-//    _mvpMatrix *= vpMtx;
+//    
+//    modelMtx.scale(cMVector3D<float>(1000,1000,1000));
+    modelMtx.scale(cMVector3D<float>(10,10,1));
+    modelMtx.translate(0, 0, 20);
 
     _mvpMatrix = modelMtx;
-    _mvpMatrix *= *viewMtx;
-    _mvpMatrix *= *projMtx;
+    _mvpMatrix *= vpMtx;
 
     _graphics->DrawTriangle(&_mvpMatrix, shaderProgram);
     // End of draw

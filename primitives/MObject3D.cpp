@@ -26,7 +26,12 @@ const cMVector3Df* cMObject3D::GetPosition() const
 	return &_origin;
 }
 
-void cMObject3D::GetPosition( cMVector3Df* vect )
+void cMObject3D::GetPosition(cMVector3Df* vect)
 {
-	memcpy(vect, &_origin, sizeof(_origin));
+    *vect = _origin;
+}
+
+void cMObject3D::SetPosition(const cMVector3Df& pos)
+{
+    _origin = pos;
 }

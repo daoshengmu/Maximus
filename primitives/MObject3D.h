@@ -37,7 +37,9 @@ public:
 
 	const cMVector3Df* GetPosition() const;
 	
-	void GetPosition( cMVector3Df* vect );
+	void GetPosition(cMVector3Df* vect);
+    
+    void SetPosition(const cMVector3Df& pos);
 };
 
 #endif

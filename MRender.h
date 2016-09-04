@@ -44,6 +44,7 @@ public:
     void SetViewport(int x, int y, int w, int h);
     void Terminate();
     void SetCamera(cMCamera *pCamera);
+    cMCamera* GetCamera();
 };
 
 }

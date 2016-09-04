@@ -85,6 +85,8 @@ static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
     NSRect bounds = [self bounds];
     NSRect pixels = [self convertRectToBacking:bounds];
     cbCtx->maxiRenderer->Init(pixels.size.width,pixels.size.height);
+    cMCamera* pCamera = cbCtx->maxiRenderer->GetCamera();
+    pCamera->SetPosition(cMVector3Df(0, 0, -20));
     
 	CVDisplayLinkCreateWithActiveCGDisplays(&displayLink);
 	CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink, (CGLContextObj) [cbCtx->ctx CGLContextObj], (CGLPixelFormatObj) [pf CGLPixelFormatObj]);

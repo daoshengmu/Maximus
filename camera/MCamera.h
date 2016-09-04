@@ -23,8 +23,8 @@ class cMCamera: public cMObject3D
 {
 	
 public:
-    cMCamera(): _cameraType(EM_CAMERATYPE::Ct_Orthogonal), _fovX(0), _fovY(0),
-				  _near(1), _far(500) {};
+    cMCamera(): _cameraType(EM_CAMERATYPE::Ct_Perspective), _fovX(90.0f), _fovY(73.74f),
+				  _near(1), _far(1000) {};
 	
     ~cMCamera() {}
     
