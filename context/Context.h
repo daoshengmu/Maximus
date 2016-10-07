@@ -17,6 +17,7 @@ namespace Maximus
 class Context
 {
 public:
+    virtual ~Context() {};
     virtual bool Init() = 0;
     virtual void Terminate() = 0;
     virtual void* GetContext() = 0;

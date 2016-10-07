@@ -70,10 +70,6 @@ static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
 		[cbCtx->ctx makeCurrentContext];
 
         cbCtx->maxiRenderer = cMaxiFactory::instance().createRenderer();
-        
-		NSRect bounds = [self bounds];
-		NSRect pixels = [self convertRectToBacking:bounds];
-        cbCtx->maxiRenderer->SetViewport(0, 0, pixels.size.width,pixels.size.height);
     }
     return self;
 }
@@ -85,6 +81,7 @@ static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
     NSRect bounds = [self bounds];
     NSRect pixels = [self convertRectToBacking:bounds];
     cbCtx->maxiRenderer->Init(pixels.size.width,pixels.size.height);
+    cbCtx->maxiRenderer->SetViewport(0, 0, pixels.size.width,pixels.size.height);
     cMCamera* pCamera = cbCtx->maxiRenderer->GetCamera();
     pCamera->SetPosition(cMVector3Df(0, 0, -20));
     

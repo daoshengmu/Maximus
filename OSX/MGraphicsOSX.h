@@ -15,6 +15,8 @@
 namespace Maximus
 {
 
+class Context;
+    
 class cMGraphicsOSX : public IMGraphics
 {
 public:
@@ -30,6 +32,9 @@ public:
     virtual GShader CreateShader(const char *vShader, const char *fShader);
     virtual void SetViewport(float x, float y, float w, float h) ;
     virtual void Terminate();
+    
+private:
+    Context*    _context;
 };
 
 }

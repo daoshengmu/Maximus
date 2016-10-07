@@ -33,10 +33,6 @@ bool ContextOSX::Init()
     };
 #endif
     
-    //cbCtx = (CallbackContext*) malloc(sizeof(CallbackContext));
-    
-   // NSOpenGLPixelFormat* pixelFormat = [[[NSOpenGLPixelFormat alloc] initWithAttributes:attrs]autorelease];
-    
     NSOpenGLPixelFormat* pixelFormat = [[NSOpenGLPixelFormat alloc]
                                         initWithAttributes:attrs];
     if (!pixelFormat) {

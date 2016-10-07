@@ -92,6 +92,7 @@ assert(0 && "Dying..."); \
 }
 
 cMGraphicsOSX::cMGraphicsOSX()
+    : _context(nullptr)
 {
     
 }
@@ -114,11 +115,12 @@ unsigned short *indexData = NULL;
 void cMGraphicsOSX::Init()
 {
 #ifdef __MOS_OSX__
-    //_context = new ContextOSX();
+    _context = new ContextOSX();
 #else
 #error "TODO: You need to new other Context for other platform..."
 #endif
-   // _context->Init();
+    // TODO: Figure out why OSX can't use the context inside Maximus
+    //_context->Init();
     
     // Create Rect vertex / index buffer
     float vertexArray[] = {
@@ -152,8 +154,6 @@ void cMGraphicsOSX::Init()
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, numIndices * sizeof(uint16), indexData, GL_STATIC_DRAW);
     glError();
     free(indexData);
-    
-    BeginFrame();
 }
 
 GLuint vao;
@@ -339,6 +339,12 @@ void cMGraphicsOSX::Terminate()
     //free(resourcePath);
     glUseProgram(0);
     glDeleteProgram(g_Shader);
+    
+    if (_context)
+    {
+        delete _context;
+        _context = nullptr;
+    }
 }
 
     
