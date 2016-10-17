@@ -16,14 +16,14 @@
 		B71D0C091C802E5C004E3F3E /* factory in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C021C802E5C004E3F3E /* factory */; };
 		B71D0C0A1C802E5C004E3F3E /* interface in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C031C802E5C004E3F3E /* interface */; };
 		B71D0C0B1C802E5C004E3F3E /* OSX in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C041C802E5C004E3F3E /* OSX */; };
-		B71D0C0C1C802E5C004E3F3E /* primitives in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C051C802E5C004E3F3E /* primitives */; };
-		B71D0C0E1C802E5C004E3F3E /* utils in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C071C802E5C004E3F3E /* utils */; };
+		B71D0C0C1C802E5C004E3F3E /* primitive in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C051C802E5C004E3F3E /* primitive */; };
+		B71D0C0E1C802E5C004E3F3E /* util in Resources */ = {isa = PBXBuildFile; fileRef = B71D0C071C802E5C004E3F3E /* util */; };
 		B75B7F0D1D747D89005AEF0D /* MaxiFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75B7F0C1D747D89005AEF0D /* MaxiFactory.cpp */; };
 		B75B7F101D747FA2005AEF0D /* GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = B75B7F0F1D747FA2005AEF0D /* GLView.mm */; };
 		B75B7F121D748C15005AEF0D /* MCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75B7F111D748C15005AEF0D /* MCamera.cpp */; };
 		B75B7F141D748D62005AEF0D /* MObject3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75B7F131D748D62005AEF0D /* MObject3D.cpp */; };
 		B76F1C101C81E5F10011E3D2 /* MRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B76F1C0E1C81E5F10011E3D2 /* MRender.cpp */; };
-		B7A882B51D7A7DA9001222E0 /* shaders in Resources */ = {isa = PBXBuildFile; fileRef = B7A882B41D7A7DA9001222E0 /* shaders */; };
+		B7A882B51D7A7DA9001222E0 /* shader in Resources */ = {isa = PBXBuildFile; fileRef = B7A882B41D7A7DA9001222E0 /* shader */; };
 		B7A882B81D7A7E66001222E0 /* context in Resources */ = {isa = PBXBuildFile; fileRef = B7A882B71D7A7E66001222E0 /* context */; };
 		B7A882BA1D7AC52C001222E0 /* MGraphicsOSX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7A882B91D7AC52C001222E0 /* MGraphicsOSX.cpp */; };
 		B7A882BC1D7ACF9B001222E0 /* ContextOSX.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7A882BB1D7ACF9B001222E0 /* ContextOSX.mm */; };
@@ -48,16 +48,16 @@
 		B71D0C021C802E5C004E3F3E /* factory */ = {isa = PBXFileReference; lastKnownFileType = folder; name = factory; path = ../../factory; sourceTree = "<group>"; };
 		B71D0C031C802E5C004E3F3E /* interface */ = {isa = PBXFileReference; lastKnownFileType = folder; name = interface; path = ../../interface; sourceTree = "<group>"; };
 		B71D0C041C802E5C004E3F3E /* OSX */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OSX; path = ../../OSX; sourceTree = "<group>"; };
-		B71D0C051C802E5C004E3F3E /* primitives */ = {isa = PBXFileReference; lastKnownFileType = folder; name = primitives; path = ../../primitives; sourceTree = "<group>"; };
-		B71D0C071C802E5C004E3F3E /* utils */ = {isa = PBXFileReference; lastKnownFileType = folder; name = utils; path = ../../utils; sourceTree = "<group>"; };
+		B71D0C051C802E5C004E3F3E /* primitive */ = {isa = PBXFileReference; lastKnownFileType = folder; name = primitive; path = ../../primitive; sourceTree = "<group>"; };
+		B71D0C071C802E5C004E3F3E /* util */ = {isa = PBXFileReference; lastKnownFileType = folder; name = util; path = ../../util; sourceTree = "<group>"; };
 		B75B7F0C1D747D89005AEF0D /* MaxiFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MaxiFactory.cpp; path = ../../factory/MaxiFactory.cpp; sourceTree = "<group>"; };
 		B75B7F0E1D747FA2005AEF0D /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLView.h; path = ../../OSX/GLView.h; sourceTree = "<group>"; };
 		B75B7F0F1D747FA2005AEF0D /* GLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GLView.mm; path = ../../OSX/GLView.mm; sourceTree = "<group>"; };
 		B75B7F111D748C15005AEF0D /* MCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCamera.cpp; path = ../../camera/MCamera.cpp; sourceTree = "<group>"; };
-		B75B7F131D748D62005AEF0D /* MObject3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MObject3D.cpp; path = ../../primitives/MObject3D.cpp; sourceTree = "<group>"; };
+		B75B7F131D748D62005AEF0D /* MObject3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MObject3D.cpp; path = ../../primitive/MObject3D.cpp; sourceTree = "<group>"; };
 		B76F1C0E1C81E5F10011E3D2 /* MRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MRender.cpp; path = ../../MRender.cpp; sourceTree = "<group>"; };
 		B76F1C0F1C81E5F10011E3D2 /* MRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRender.h; path = ../../MRender.h; sourceTree = "<group>"; };
-		B7A882B41D7A7DA9001222E0 /* shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shaders; path = ../../shaders; sourceTree = "<group>"; };
+		B7A882B41D7A7DA9001222E0 /* shader */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shader; path = ../../shader; sourceTree = "<group>"; };
 		B7A882B71D7A7E66001222E0 /* context */ = {isa = PBXFileReference; lastKnownFileType = folder; name = context; path = ../../context; sourceTree = "<group>"; };
 		B7A882B91D7AC52C001222E0 /* MGraphicsOSX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MGraphicsOSX.cpp; path = ../../OSX/MGraphicsOSX.cpp; sourceTree = "<group>"; };
 		B7A882BB1D7ACF9B001222E0 /* ContextOSX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ContextOSX.mm; path = ../../context/ContextOSX.mm; sourceTree = "<group>"; };
@@ -186,9 +186,9 @@
 				B76F1C0E1C81E5F10011E3D2 /* MRender.cpp */,
 				B76F1C0F1C81E5F10011E3D2 /* MRender.h */,
 				B71D0C041C802E5C004E3F3E /* OSX */,
-				B71D0C051C802E5C004E3F3E /* primitives */,
-				B7A882B41D7A7DA9001222E0 /* shaders */,
-				B71D0C071C802E5C004E3F3E /* utils */,
+				B71D0C051C802E5C004E3F3E /* primitive */,
+				B7A882B41D7A7DA9001222E0 /* shader */,
+				B71D0C071C802E5C004E3F3E /* util */,
 			);
 			name = Maximus;
 			sourceTree = "<group>";
@@ -261,9 +261,9 @@
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				B71D0C091C802E5C004E3F3E /* factory in Resources */,
 				B7A882B81D7A7E66001222E0 /* context in Resources */,
-				B71D0C0C1C802E5C004E3F3E /* primitives in Resources */,
-				B71D0C0E1C802E5C004E3F3E /* utils in Resources */,
-				B7A882B51D7A7DA9001222E0 /* shaders in Resources */,
+				B71D0C0C1C802E5C004E3F3E /* primitive in Resources */,
+				B71D0C0E1C802E5C004E3F3E /* util in Resources */,
+				B7A882B51D7A7DA9001222E0 /* shader in Resources */,
 				B71D0C081C802E5C004E3F3E /* camera in Resources */,
 				B71D0C0B1C802E5C004E3F3E /* OSX in Resources */,
 			);

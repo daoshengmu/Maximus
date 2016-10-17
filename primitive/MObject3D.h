@@ -10,17 +10,21 @@
 #ifndef __MOBJECT3D_H__
 #define __MOBJECT3D_H__
 
-#include "utils/MUtils.h"
+#include "util/MUtils.h"
 
+namespace Maximus {
+
+class Material;
+    
 class cMObject3D
 {
 private:
-	cMVector3Df	_origin;
-	cMVector3Df	_scale;	
+  cMVector3Df	_origin;
+  cMVector3Df	_scale;
 	
 protected:
-	cMMatrix3Df	worldMtx_;
-	bool		update_;
+  cMMatrix3Df	worldMtx_;
+  bool		update_;
 	
 public:
 	//--------------------------------------------------------------------------------------
@@ -41,5 +45,6 @@ public:
     
     void SetPosition(const cMVector3Df& pos);
 };
+}
 
 #endif

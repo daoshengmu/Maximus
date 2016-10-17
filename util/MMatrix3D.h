@@ -11,7 +11,7 @@
 #define __MMATRIX3D_H__
 
 #include <cstring>
-#include "utils/MVector3D.h"
+#include "util/MVector3D.h"
 
 
 template<class Type>

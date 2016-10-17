@@ -10,7 +10,7 @@
 #ifndef __IMGRAPHICS_H__
 #define __IMGRAPHICS_H__
 
-#include "utils/MTypes.h"
+#include "util/MTypes.h"
 
 namespace Maximus
 {

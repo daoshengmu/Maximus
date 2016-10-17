@@ -7,10 +7,10 @@
 //
 
 #include "MRender.h"
-#include "utils/MMath.h"
+#include "util/MMath.h"
 #include "OSX/MGraphicsOSX.h"
 #include "camera/MCamera.h"
-#include "shaders/BasicShader.h"
+#include "shader/BasicShader.h"
 
 namespace Maximus {
     

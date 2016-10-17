@@ -9,7 +9,7 @@
 #ifndef MRender_h
 #define MRender_h
 
-#include "utils/MUtils.h"
+#include "util/MUtils.h"
 
 namespace Maximus
 {

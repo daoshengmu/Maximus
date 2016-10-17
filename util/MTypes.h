@@ -11,10 +11,17 @@
 #define __MTYPES_H__
 
 #ifdef __MOS_OSX__
-#import <OpenGL/gl.h>
-//#import <OpenGL/gl3ext.h>
 #define __OGL__
+#define __gl_3__
+
+#ifdef __gl_3__
+#include <OpenGL/gl3.h>
+#include <OpenGL/gl3ext.h>
+#else
+#include <OpenGL/gl.h>
+#endif
 #elif
+
 #error Need to define other graphics api types
 #endif
 
@@ -27,6 +34,7 @@ namespace Maximus
     typedef GLboolean GBool;
     typedef GLfloat GFloat;
     typedef GLuint GShader;
+    typedef GLuint GBuffer;
 #else
 #error Need to define other graphics api types
 #endif

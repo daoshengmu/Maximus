@@ -11,7 +11,7 @@
 #include <OpenGL/gl3.h>
 #include <OpenGL/gl3ext.h>
 #endif
-#include "utils/MUtils.h"
+#include "util/MUtils.h"
 #include "OSX/MGraphicsOSX.h"
 #include "context/ContextOSX.h"
 

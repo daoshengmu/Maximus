@@ -10,18 +10,19 @@
 #ifndef __MUTILS_H__
 #define __MUTILS_H__
 
-#include "utils/MTypes.h"
-#include "utils/MMath.h"
+#include <assert.h>
+#include <iostream>
 
-#include "utils/MVector3D.h"
-#include "utils/MMatrix3D.h"
+#include "util/MTypes.h"
+#include "util/MMath.h"
+
+#include "util/MVector3D.h"
+#include "util/MMatrix3D.h"
 
 
 typedef cMVector3D<float> cMVector3Df;
 typedef cMMatrix3D<float> cMMatrix3Df;
 
 typedef unsigned short uint16;
-
-#include <assert.h>
 
 #endif

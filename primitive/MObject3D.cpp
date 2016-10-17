@@ -7,13 +7,14 @@
  *
  */
 
-#include "primitives/MObject3D.h"
+#include "primitive/MObject3D.h"
 
-//-----------------------------------------
+namespace Maximus
+{
+
 cMObject3D::cMObject3D()
 : update_(true)
 {}
-//End of constructor for cMObject3D---------
 
 cMObject3D::~cMObject3D()
 {}
@@ -35,3 +36,5 @@ void cMObject3D::SetPosition(const cMVector3Df& pos)
 {
     _origin = pos;
 }
+
+} // End of namespace Maximus

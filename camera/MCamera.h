@@ -9,8 +9,8 @@
 #ifndef __MMCAMERA3D_H__
 #define __MMCAMERA3D_H__
 
-#include "utils/MUtils.h"
-#include "primitives/MObject3D.h"
+#include "util/MUtils.h"
+#include "primitive/MObject3D.h"
 
 namespace Maximus {
 
