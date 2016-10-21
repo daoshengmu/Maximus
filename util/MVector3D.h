@@ -10,6 +10,8 @@
 #ifndef __MVECTOR3D_H__
 #define __MVECTOR3D_H__
 
+namespace Maximus
+{
 
 template <class Type>
 class cMVector3D
@@ -65,5 +67,6 @@ public:
     }
 
 };
+} //  End of namespace Maximus
 
 #endif

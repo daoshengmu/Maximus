@@ -10,6 +10,7 @@
 #import "GLView.h"
 #include "factory/MaxiFactory.h"
 #include "camera/MCamera.h"
+#include "primitive/Quad.h"
 
 #define k1KeyCode 18
 #define k2KeyCode 19
@@ -26,9 +27,9 @@ static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
                           CVOptionFlags *flagsOut,
                           void *displayLinkContext )
 {
-    CallbackContext* ctx = (CallbackContext*) displayLinkContext;
+  CallbackContext* ctx = (CallbackContext*) displayLinkContext;
 	CGLSetCurrentContext((CGLContextObj) [ctx->ctx CGLContextObj]);
-    ctx->maxiRenderer->Draw();
+  ctx->maxiRenderer->Draw();
 	CGLFlushDrawable((CGLContextObj) [ctx->ctx CGLContextObj]);
 	return kCVReturnSuccess;
 }
@@ -60,48 +61,59 @@ static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
 	
     NSOpenGLPixelFormat* pixelFormat = [[[NSOpenGLPixelFormat alloc] initWithAttributes:attrs]autorelease];
     
-    self = [super initWithFrame:frame pixelFormat: pixelFormat];
-    if (self) 
+  self = [super initWithFrame:frame pixelFormat: pixelFormat];
+  if (self) 
 	{
-        self.wantsBestResolutionOpenGLSurface = YES;
-        pf = pixelFormat;
+    self.wantsBestResolutionOpenGLSurface = YES;
+    pf = pixelFormat;
 		[self setFrame:frame];
 		cbCtx->ctx = [self openGLContext];
 		[cbCtx->ctx makeCurrentContext];
 
-        cbCtx->maxiRenderer = cMaxiFactory::instance().createRenderer();
-    }
-    return self;
+    cbCtx->maxiRenderer = cMaxiFactory::instance().createRenderer();
+  }
+  return self;
 }
 
 - (void)prepareOpenGL
 {
-    [super prepareOpenGL];
-    
-    NSRect bounds = [self bounds];
-    NSRect pixels = [self convertRectToBacking:bounds];
-    cbCtx->maxiRenderer->Init(pixels.size.width,pixels.size.height);
-    cbCtx->maxiRenderer->SetViewport(0, 0, pixels.size.width,pixels.size.height);
-    cMCamera* pCamera = cbCtx->maxiRenderer->GetCamera();
-    pCamera->SetPosition(cMVector3Df(0, 0, -20));
-    
+  [super prepareOpenGL];
+  
+  NSRect bounds = [self bounds];
+  NSRect pixels = [self convertRectToBacking:bounds];
+  cbCtx->maxiRenderer->Init(pixels.size.width,pixels.size.height);
+  cbCtx->maxiRenderer->SetViewport(0, 0, pixels.size.width,pixels.size.height);
+
+  [self setupScene];
+  
 	CVDisplayLinkCreateWithActiveCGDisplays(&displayLink);
-	CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink, (CGLContextObj) [cbCtx->ctx CGLContextObj], (CGLPixelFormatObj) [pf CGLPixelFormatObj]);
+	CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink,
+                                                   (CGLContextObj) [cbCtx->ctx CGLContextObj],
+                                                   (CGLPixelFormatObj) [pf CGLPixelFormatObj]);
 	
 	CVDisplayLinkSetOutputCallback(displayLink, &Heartbeat, cbCtx);
 	CVDisplayLinkStart(displayLink);
     
-    // Register to be notified when the window closes so we can stop the displaylink
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(windowWillClose:)
-                                                 name:NSWindowWillCloseNotification
-                                               object:[self window]];
-    
-    printf("Vendor:   %s\n", glGetString(GL_VENDOR)                  );
-    printf("Renderer: %s\n", glGetString(GL_RENDERER)                );
-    printf("Version:  %s\n", glGetString(GL_VERSION)                 );
-    printf("GLSL:     %s\n", glGetString(GL_SHADING_LANGUAGE_VERSION));
+  // Register to be notified when the window closes so we can stop the displaylink
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(windowWillClose:)
+                                               name:NSWindowWillCloseNotification
+                                             object:[self window]];
+  
+  printf("Vendor:   %s\n", glGetString(GL_VENDOR)                  );
+  printf("Renderer: %s\n", glGetString(GL_RENDERER)                );
+  printf("Version:  %s\n", glGetString(GL_VERSION)                 );
+  printf("GLSL:     %s\n", glGetString(GL_SHADING_LANGUAGE_VERSION));
 
+}
+
+- (void) setupScene
+{
+  cMCamera* pCamera = cbCtx->maxiRenderer->GetCamera();
+  pCamera->SetPosition(cMVector3Df(0, 0, -20));
+  
+  Quad quad;
+  cbCtx->maxiRenderer->AddRenderItem(&quad);
 }
 
 - (BOOL)acceptsFirstResponder
@@ -120,7 +132,6 @@ static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
 	CVDisplayLinkRelease(displayLink);
 	[pf release];
 	[cbCtx->ctx release];
-    delete cbCtx->maxiRenderer;
 	free(cbCtx);
 	[super dealloc];
 }

@@ -68,7 +68,8 @@ void cMCamera::Update()
 	if (update_)
 	{
 		_SetViewMtx();
-        _SetProjMtx();
+    _SetProjMtx();
+
 		update_ = false;
 	}
 }

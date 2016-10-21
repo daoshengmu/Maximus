@@ -12,8 +12,6 @@
 
 #include "context/Context.h"
 
-#include <OpenGL/gl.h>
-
 #ifdef __OBJC__
 #include <AppKit/NSOpenGL.h>
 #else

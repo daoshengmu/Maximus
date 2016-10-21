@@ -7,21 +7,36 @@
  *
  */
 
-#ifndef __Material_H__
-#define __Material_H__
+#ifndef __MATERIAL_H__
+#define __MATERIAL_H__
 
+#include "Util/MUtils.h"
 
-namespace Maximus
-{
+namespace Maximus {
+
+class IMGraphics;
+  
 class Material
 {
-private:
-    _shader;
-    
 public:
-    virtual ~Material() {};
-
+  Material() {}
+  virtual ~Material() {
+    glDeleteShader(_shader);
+  }
+  virtual bool CreateShader(IMGraphics* aGraphics) = 0;
+  
+protected:
+  GShader _shader;
+  // TODO: Constant table
+  // TODO: Render state
+  // TODO: Textures
+  
+private:
+  GShader GetShader() {return _shader;}
+  
+  friend class cMGraphicsOSX;
 };
+
 } // End of namespace Maximus
 
-#endif /* __CONTEXT_H__ */
+#endif /* __MATERIAL_H__ */

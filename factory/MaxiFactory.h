@@ -25,20 +25,20 @@ private:
     cMaxiFactory();
     
     
-    //--------------------------------------------------------------------------
-    /// @brief Destructor
-    //--------------------------------------------------------------------------
+  //--------------------------------------------------------------------------
+  /// @brief Destructor
+  //--------------------------------------------------------------------------
     ~cMaxiFactory();
     
 	//--------------------------------------------------------------------------
 	/// @brief Copy constructor
 	//--------------------------------------------------------------------------
-    cMaxiFactory(const cMaxiFactory& rhs);
+  cMaxiFactory(const cMaxiFactory& rhs);
     
 	//--------------------------------------------------------------------------
 	/// @brief Copy assignment operator
 	//--------------------------------------------------------------------------
-    cMaxiFactory& operator = (const cMaxiFactory& rhs);
+  cMaxiFactory& operator = (const cMaxiFactory& rhs);
 	
 public:
 	static cMaxiFactory& instance()
@@ -48,7 +48,7 @@ public:
 		return fact; 
 	}
 	
-    cMRender* createRenderer();
+  cMRender* createRenderer();
 
 };
     

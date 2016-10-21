@@ -10,15 +10,23 @@
 #ifndef __QUAD_H__
 #define __QUAD_H__
 
-#include "primitive/MObject3D.h"
+#include "primitive/RenderItem.h"
 
 namespace Maximus
 {
-class Quad : public cMObject3D
+class Quad : public RenderItem
 {
 public:
-    Quad();
-    ~Quad() {}
+  Quad();
+  virtual ~Quad() {}
+  
+private:
+  static const float _quadVertices[];
+  static const uint16_t _quadIndices[];
+  
+//  int _numVertics;
+//  int _vertexSize;
+//  int _numIndices;
 };
 }
 

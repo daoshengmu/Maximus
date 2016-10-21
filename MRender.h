@@ -16,35 +16,45 @@ namespace Maximus
 
 class IMGraphics;
 class cMCamera;
+class RenderItem;
+class Surface;
 
 struct Rect
 {
-    float x, y, w, h;
-    
-    void Set(float inX, float inY, float inW, float inH)
-    {
-        x = inX, y = inY, w = inW, h = inH;
-    }
+  float x, y, w, h;
+  
+  void Set(float inX, float inY, float inW, float inH)
+  {
+      x = inX, y = inY, w = inW, h = inH;
+  }
 };
 
 class cMRender
 {
-private:
-    IMGraphics* _graphics;
-    cMCamera*   _camera;
-    cMMatrix3Df _mvpMatrix;
-    Rect       _viewport;
-    
 public:
-    cMRender();
-    ~cMRender();
-    
-    void Init(int width, int height);
-    void Draw();
-    void SetViewport(int x, int y, int w, int h);
-    void Terminate();
-    void SetCamera(cMCamera *pCamera);
-    cMCamera* GetCamera();
+  void Init(int width, int height);
+  void Draw();
+  void SetViewport(int x, int y, int w, int h);
+  void Terminate();
+  void SetCamera(cMCamera *aCamera);
+  cMCamera* GetCamera();
+  void AddRenderItem(RenderItem* aRenderItem);
+  
+  static cMRender& GetInstance();
+  
+private:
+  cMRender();
+  ~cMRender();
+  
+  cMRender(const cMRender& rValue);
+  cMRender& operator = (const cMRender& rValue);
+  
+  static bool _bInit;
+  IMGraphics* _graphics;
+  cMCamera*   _camera;
+  cMMatrix3Df _mvpMatrix;
+  Rect       _viewport;
+  vector<shared_ptr<Surface>> _surfaces;
 };
 
 }

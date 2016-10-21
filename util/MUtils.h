@@ -12,6 +12,8 @@
 
 #include <assert.h>
 #include <iostream>
+#include <vector>
+#include <memory>
 
 #include "util/MTypes.h"
 #include "util/MMath.h"
@@ -19,10 +21,14 @@
 #include "util/MVector3D.h"
 #include "util/MMatrix3D.h"
 
+namespace Maximus
+{
 
 typedef cMVector3D<float> cMVector3Df;
 typedef cMMatrix3D<float> cMMatrix3Df;
 
-typedef unsigned short uint16;
+} // End of namespace Maximus
+
+using namespace std;
 
 #endif

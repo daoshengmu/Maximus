@@ -27,4 +27,6 @@ typedef struct _CallbackContext
 	CVDisplayLinkRef displayLink;
 }
 
+- (void) setupScene;
+
 @end

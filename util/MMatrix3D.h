@@ -13,6 +13,8 @@
 #include <cstring>
 #include "util/MVector3D.h"
 
+namespace Maximus
+{
 
 template<class Type>
 class cMMatrix3D 
@@ -184,4 +186,6 @@ const cMMatrix3D<Type> cMMatrix3D<Type>::g_Identity( 1,0,0,0,
 													 0,0,1,0,
 													 0,0,0,1 );
 
+} // End of namespace Maximus
+  
 #endif

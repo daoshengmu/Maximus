@@ -7,6 +7,7 @@
  *
  */
 
+#include "util/MUtils.h"
 #include "context/ContextOSX.h"
 
 namespace Maximus

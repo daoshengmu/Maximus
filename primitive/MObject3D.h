@@ -21,9 +21,9 @@ class cMObject3D
 private:
   cMVector3Df	_origin;
   cMVector3Df	_scale;
-	
+  
 protected:
-  cMMatrix3Df	worldMtx_;
+  cMMatrix3D<float>	worldMtx_;
   bool		update_;
 	
 public:
