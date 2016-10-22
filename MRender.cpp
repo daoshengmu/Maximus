@@ -75,6 +75,7 @@ void cMRender::AddRenderItem(RenderItem* aRenderItem)
 {
   // Init primitives
   aRenderItem->Init(_graphics);
+  aRenderItem->Update();
   shared_ptr<Surface> surf = aRenderItem->GetSurface();
 
   _surfaces.push_back(surf);
@@ -90,8 +91,9 @@ void cMRender::SetViewport(int x, int y, int w, int h)
 
 void cMRender::Draw()
 {
+  // TODO: put to cMRender::Update();
   _camera->Update();
-  cMGraphicsOSX::ErrorCheck();
+
   _graphics->BeginFrame();
   
   const cMMatrix3Df* viewMtx = _camera->GetViewMatrix();
@@ -101,18 +103,13 @@ void cMRender::Draw()
   vpMtx *= *projMtx;
   
   for (uint i = 0; i < _surfaces.size(); ++i) {
-    cMMatrix3D<float> modelMtx;
-    //
-    //    modelMtx.scale(cMVector3D<float>(1000,1000,1000));
-    modelMtx.scale(cMVector3D<float>(10,10,1));
-    modelMtx.translate(0, 0, 20);
+    shared_ptr<cMMatrix3Df> modelMtx = _surfaces[i]->GetWorldMatrix();
     
-    _mvpMatrix = modelMtx;
+    _mvpMatrix = *modelMtx;
     _mvpMatrix *= vpMtx;
     
     _graphics->DrawTriangle(_surfaces[i].get(), &_mvpMatrix);
     // End of draw
-
   }
   _graphics->EndFrame();
 }

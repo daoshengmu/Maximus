@@ -13,28 +13,46 @@ namespace Maximus
 {
 
 cMObject3D::cMObject3D()
-: update_(true)
+: mUpdate(true), mWorldMtx(make_shared<cMMatrix3Df>())
 {}
 
 cMObject3D::~cMObject3D()
 {}
 
 void cMObject3D::Update()
-{}
+{
+  if (mUpdate)
+  {
+    mWorldMtx->identity();
+    mWorldMtx->scale(mScale);
+    mWorldMtx->translate(mOrigin);
+    // TODO: Rotate
+    
+    mUpdate = false;
+  }
+}
 
 const cMVector3Df* cMObject3D::GetPosition() const
 {
-	return &_origin;
+	return &mOrigin;
 }
 
 void cMObject3D::GetPosition(cMVector3Df* vect)
 {
-    *vect = _origin;
+  *vect = mOrigin;
+  mUpdate = true;
 }
 
 void cMObject3D::SetPosition(const cMVector3Df& pos)
 {
-    _origin = pos;
+  mOrigin = pos;
+  mUpdate = true;
+}
+  
+void cMObject3D::Scale(const cMVector3Df& aScale)
+{
+  mScale = aScale;
+  mUpdate = true;
 }
 
 } // End of namespace Maximus

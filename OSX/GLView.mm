@@ -113,6 +113,9 @@ static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
   pCamera->SetPosition(cMVector3Df(0, 0, -20));
   
   Quad quad;
+  
+  quad.Scale(cMVector3Df(10,10,1));
+  quad.SetPosition(cMVector3Df(0, 0, 20));
   cbCtx->maxiRenderer->AddRenderItem(&quad);
 }
 

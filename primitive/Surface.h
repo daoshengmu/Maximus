@@ -37,10 +37,12 @@ public:
 //  Primitive& operator = (const Primitive& rValue);
 
   void Init(IMGraphics* aGraphics, int aNumVertics, int aVertexSize,
-            int aNumIndices, const float* aVertices, const uint16_t* aIndices);
+            int aNumIndices, const float* aVertices, const uint16_t* aIndices,
+            shared_ptr<cMMatrix3Df> aWorldMtx);
   int GetNumVertices();
   int GetVertexSize();
   int GetNumIndices();
+  shared_ptr<cMMatrix3Df> GetWorldMatrix();
   
 protected:
   // Get from RenderItem
@@ -49,6 +51,8 @@ protected:
   int _numIndices;
   const float* _vertices;
   const uint16_t* _indices;
+  
+  shared_ptr<cMMatrix3Df> _worldMtx;
   
   GBuffer _vertexArrayObject;
   GBuffer _vertexBuffer;

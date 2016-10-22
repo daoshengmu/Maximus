@@ -40,13 +40,15 @@ Surface::~Surface()
 //}
   
 void Surface::Init(IMGraphics* aGraphics, int aNumVertics, int aVertexSize,
-                  int aNumIndices, const float* aVertices, const uint16_t* aIndices)
+                   int aNumIndices, const float* aVertices, const uint16_t* aIndices,
+                   shared_ptr<cMMatrix3Df> aWorldMtx)
 {
   _numVertics = aNumVertics;
   _vertexSize = aVertexSize;
   _numIndices = aNumIndices;
   _vertices = aVertices;
   _indices = aIndices;
+  _worldMtx = aWorldMtx;
   
   // Create vertex / index buffer
   aGraphics->CreateVertexArrayObject(1, &_vertexArrayObject);
@@ -87,5 +89,10 @@ int Surface::GetNumVertices()
 {
   return _numVertics;
 }
-  
+ 
+shared_ptr<cMMatrix3Df> Surface::GetWorldMatrix()
+{
+  return _worldMtx;
+}
+
 }  // End of namespace Maximus

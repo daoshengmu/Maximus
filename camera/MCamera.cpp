@@ -15,12 +15,15 @@ namespace Maximus
 
 void cMCamera::_SetViewMtx()
 {
-    cMVector3Df origin( *GetPosition() );
-    origin *= -1;
-	_viewMtx.SetItems( worldMtx_[0], worldMtx_[4], worldMtx_[8], 0.0,
-                       worldMtx_[1], worldMtx_[5], worldMtx_[9], 0.0,
-                       worldMtx_[2], worldMtx_[6], worldMtx_[10], 0.0,
-                           origin.x,     origin.y,      origin.z, 1.0 );
+  cMVector3Df origin(*GetPosition());
+  
+  origin *= -1;
+  
+  float* items = mWorldMtx->GetItems();
+	_viewMtx.SetItems( items[0], items[4], items[8], 0.0,
+                     items[1], items[5], items[9], 0.0,
+                     items[2], items[6], items[10], 0.0,
+                     origin.x, origin.y,  origin.z, 1.0 );
 
    // _viewMtx = cMMatrix3Df();
 	//const cMVector3Df* pos = GetPosition();
@@ -65,12 +68,12 @@ void cMCamera::_SetProjMtx()
 
 void cMCamera::Update()
 {
-	if (update_)
+	if (mUpdate)
 	{
 		_SetViewMtx();
     _SetProjMtx();
 
-		update_ = false;
+		mUpdate = false;
 	}
 }
     

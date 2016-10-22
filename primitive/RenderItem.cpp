@@ -24,7 +24,7 @@ void RenderItem::Init(IMGraphics* aGraphics)
 {
   _surface = make_shared<Surface>();
   _surface->Init(aGraphics, _numVertics, _vertexSize,
-                 _numIndices, _vertices, _indices);
+                 _numIndices, _vertices, _indices, mWorldMtx);
 }
   
 shared_ptr<Surface> RenderItem::GetSurface()

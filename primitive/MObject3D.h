@@ -18,14 +18,6 @@ class Material;
     
 class cMObject3D
 {
-private:
-  cMVector3Df	_origin;
-  cMVector3Df	_scale;
-  
-protected:
-  cMMatrix3D<float>	worldMtx_;
-  bool		update_;
-	
 public:
 	//--------------------------------------------------------------------------------------
     /// @brief Constructor
@@ -38,12 +30,17 @@ public:
 	virtual ~cMObject3D();
 	
 	virtual void Update();
-
 	const cMVector3Df* GetPosition() const;
-	
 	void GetPosition(cMVector3Df* vect);
-    
-    void SetPosition(const cMVector3Df& pos);
+  void SetPosition(const cMVector3Df& pos);
+  void Scale(const cMVector3Df& aScale);
+
+protected:
+  shared_ptr<cMMatrix3Df>	mWorldMtx;
+  bool		mUpdate;
+  cMVector3Df	mOrigin;
+  cMVector3Df	mScale;
+
 };
 }
 
