@@ -27,7 +27,7 @@ public:
   
 protected:
   shared_ptr<Surface> _surface;
-  int _numVertics;
+  int _numVertices;
   int _vertexSize;
   int _numIndices;
   const float* _vertices;

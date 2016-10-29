@@ -1,5 +1,5 @@
 /*
- *  Quad.h
+ *  Cube.h
  *  Maximus
  *
  *  Created by User on 11/17/16.
@@ -7,22 +7,22 @@
  *
  */
 
-#ifndef __QUAD_H__
-#define __QUAD_H__
+#ifndef __CUBE_H__
+#define __CUBE_H__
 
 #include "primitive/RenderItem.h"
 
 namespace Maximus
 {
-class Quad : public RenderItem
+class Cube : public RenderItem
 {
 public:
-  Quad();
-  virtual ~Quad() {}
+  Cube();
+  virtual ~Cube() {}
   
 private:
-  static const float _quadVertices[];
-  static const uint16_t _quadIndices[];
+  static const float sCubeVertices[];
+  static const uint16_t sCubeIndices[];
 };
 }
 

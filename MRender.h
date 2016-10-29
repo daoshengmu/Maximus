@@ -4,6 +4,7 @@
 //
 //  Created by Daosheng Mu on 2/19/16.
 //
+//  The 3D coordinate is Y-up right hand coordinate.
 //
 
 #ifndef MRender_h

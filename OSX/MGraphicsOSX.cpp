@@ -117,6 +117,11 @@ void cMGraphicsOSX::Init()
 #endif
   // TODO: Figure out why OSX can't use the context inside Maximus
   //_context->Init();
+  
+  glEnable(GL_CULL_FACE);
+  glFrontFace(GL_CCW);
+  glCullFace(GL_BACK);
+  glEnable(GL_DEPTH_TEST);
 }
   
 void cMGraphicsOSX::DrawTriangle(Surface* aSurface, const cMMatrix3Df *mvpMatrix)

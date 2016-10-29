@@ -14,7 +14,7 @@ namespace Maximus
 {
 
 RenderItem::RenderItem()
-  : _numVertics(0), _numIndices(0), _vertexSize(0),
+  : _numVertices(0), _numIndices(0), _vertexSize(0),
     _vertices(nullptr), _indices(nullptr)
 {
   
@@ -23,7 +23,7 @@ RenderItem::RenderItem()
 void RenderItem::Init(IMGraphics* aGraphics)
 {
   _surface = make_shared<Surface>();
-  _surface->Init(aGraphics, _numVertics, _vertexSize,
+  _surface->Init(aGraphics, _numVertices, _vertexSize,
                  _numIndices, _vertices, _indices, mWorldMtx);
 }
   

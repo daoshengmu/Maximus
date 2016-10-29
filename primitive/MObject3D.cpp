@@ -13,7 +13,8 @@ namespace Maximus
 {
 
 cMObject3D::cMObject3D()
-: mUpdate(true), mWorldMtx(make_shared<cMMatrix3Df>())
+: mUpdate(true), mWorldMtx(make_shared<cMMatrix3Df>()),
+  mScale(1.0, 1.0, 1.0)
 {}
 
 cMObject3D::~cMObject3D()

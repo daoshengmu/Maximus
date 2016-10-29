@@ -27,8 +27,7 @@ public:
 				  _near(1), _far(1000) {};
 	
     ~cMCamera() {}
-    
-// --- private member attribute
+
 private:
 	cMMatrix3Df		_viewMtx;
 	cMMatrix3Df		_projMtx;

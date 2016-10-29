@@ -11,6 +11,8 @@
 #include "factory/MaxiFactory.h"
 #include "camera/MCamera.h"
 #include "primitive/Quad.h"
+#include "primitive/Cube.h"
+#include "primitive/Sphere.h"
 
 #define k1KeyCode 18
 #define k2KeyCode 19
@@ -110,13 +112,23 @@ static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
 - (void) setupScene
 {
   cMCamera* pCamera = cbCtx->maxiRenderer->GetCamera();
-  pCamera->SetPosition(cMVector3Df(0, 0, -20));
+  pCamera->SetPosition(cMVector3Df(0, 0, 15));
   
   Quad quad;
+  Cube cube;
+  Sphere sphere;
   
-  quad.Scale(cMVector3Df(10,10,1));
-  quad.SetPosition(cMVector3Df(0, 0, 20));
+  quad.Scale(cMVector3Df(1, 1, 1));
+  quad.SetPosition(cMVector3Df(0, 0, 0));
   cbCtx->maxiRenderer->AddRenderItem(&quad);
+  
+  cube.Scale(cMVector3Df(1, 1, 1));
+  cube.SetPosition(cMVector3Df(0, 3, 0));
+  cbCtx->maxiRenderer->AddRenderItem(&cube);
+  
+  sphere.Scale(cMVector3Df(3, 3, 3));
+  sphere.SetPosition(cMVector3Df(3, 0, 0));
+  cbCtx->maxiRenderer->AddRenderItem(&sphere);
 }
 
 - (BOOL)acceptsFirstResponder

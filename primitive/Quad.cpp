@@ -21,7 +21,7 @@ const uint16_t Quad::_quadIndices[] = { 0,1,2, 2,3,0 };
   
 Quad::Quad()
 {
-  _numVertics = 4;
+  _numVertices = 4;
   _vertexSize = 28;
   _numIndices = 6;
   

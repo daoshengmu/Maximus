@@ -32,7 +32,7 @@ public:
       "\n"
       "void main(void) \n"
       "{ \n"
-      " gl_Position = g_worldViewProjMatrix * vec4( g_vPositionOS, 1.0 ); \n"
+      " gl_Position =  vec4( g_vPositionOS, 1.0 ) * g_worldViewProjMatrix; \n"
       " outColor = g_vColorOS;"
       "} \n";
       

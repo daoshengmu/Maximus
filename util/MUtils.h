@@ -14,6 +14,7 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include <math.h>
 
 #include "util/MTypes.h"
 #include "util/MMath.h"
