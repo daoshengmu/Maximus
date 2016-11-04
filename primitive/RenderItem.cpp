@@ -9,6 +9,7 @@
 
 #include "primitive/RenderItem.h"
 #include "primitive/Surface.h"
+#include "material/Material.h"
 
 namespace Maximus
 {
@@ -32,4 +33,9 @@ shared_ptr<Surface> RenderItem::GetSurface()
   return _surface;
 }
 
+void RenderItem::SetMaterialColor(const cMVector4Df& aColor)
+{
+  _surface->GetMaterial()->SetMaterialColor(aColor);
+}
+  
 }  // End of namespace Maximus

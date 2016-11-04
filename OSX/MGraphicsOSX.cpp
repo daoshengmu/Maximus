@@ -30,21 +30,8 @@ namespace Maximus
   
 #define BUFFER_OFFSET(i) ((char *)nullptr + (i))
 
-//// Uniform index.
-//enum {
-//  UNIFORM_TRANSLATE,
-//  NUM_UNIFORMS
-//};
-//GLint uniforms1[NUM_UNIFORMS];
-//
-//// Attribute index.
-//enum {
-//  ATTRIB_VERTEX,
-//  ATTRIB_COLOR,
-//  NUM_ATTRIBUTES
-//};
-
 int mvpUniformPos = -1;
+int mtrColorUniformPos = -1;
   
 static inline const char * GetGLErrorString(GLenum error)
 {
@@ -129,12 +116,15 @@ void cMGraphicsOSX::DrawTriangle(Surface* aSurface, const cMMatrix3Df *mvpMatrix
   shared_ptr<Material> pMat = aSurface->GetMaterial();
   GShader shader = pMat->GetShader();
   
-  // Draw rect
   glUseProgram(shader);
   glError();
   
+  const cMVector4Df& mtrColor = pMat->GetMaterialColor();
+  SetUniform4f(mtrColorUniformPos, 1, (GFloat* )&mtrColor);
+  glError();
+  
   // Set MVP matrix
-  glUniformMatrix4fv(mvpUniformPos, 1, GL_TRUE, mvpMatrix->GetItems());
+  SetUniformMatrix4f(mvpUniformPos, 1, mvpMatrix->GetItems());
   glError();
   
 #ifdef __gl_3__
@@ -183,12 +173,12 @@ void cMGraphicsOSX::EndFrame()
 
 void cMGraphicsOSX::SetUniform4f(GInt index, GSizei count, const GFloat *value)
 {
-  glUniformMatrix4fv(index, count, GL_FALSE, value);
+  glUniform4fv(index, count, value);
 }
   
 void cMGraphicsOSX::SetUniformMatrix4f(GInt index,  GSizei count, const GFloat *value)
 {
-  glUniformMatrix4fv(index, count, GL_FALSE, value);
+  glUniformMatrix4fv(index, count, GL_TRUE, value);
 }
   
 bool cMGraphicsOSX::CreateShader(const char *vShader, const char *fShader, GShader* aResult)
@@ -234,7 +224,9 @@ bool cMGraphicsOSX::CreateShader(const char *vShader, const char *fShader, GShad
     //We don't need the shader anymore.
     glDeleteShader(fragmentShader);
     //Use the infoLog as you see fit.
-    assert( 0 && infoLog );
+    printf("%s", infoLog);
+    assert(false);
+
     return false;
   }
   
@@ -253,9 +245,12 @@ bool cMGraphicsOSX::CreateShader(const char *vShader, const char *fShader, GShad
   assert(vertexLoc == glGetAttribLocation(shaderProgram, "g_vPositionOS"));
   assert(colorLoc == glGetAttribLocation(shaderProgram, "g_vColorOS"));
   
-  const char *g_worldViewProjMatrix = "g_worldViewProjMatrix";
+  const char* g_worldViewProjMatrix = "g_worldViewProjMatrix";
   mvpUniformPos = glGetUniformLocation( shaderProgram, g_worldViewProjMatrix );
   glError();
+  
+  const char* g_MaterialColor = "g_mtrColor";
+  mtrColorUniformPos = glGetUniformLocation( shaderProgram, g_MaterialColor );
   
   // Check for link success
   GLint maxLength = 0;

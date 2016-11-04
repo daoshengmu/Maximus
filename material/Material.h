@@ -19,12 +19,14 @@ class IMGraphics;
 class Material
 {
 public:
-  Material() {}
+  Material();
   virtual ~Material() {
     glDeleteShader(_shader);
   }
   virtual bool CreateShader(IMGraphics* aGraphics) = 0;
-  
+  const cMVector4Df& GetMaterialColor();
+  void SetMaterialColor(const cMVector4Df& aColor);
+
 protected:
   GShader _shader;
   // TODO: Constant table
@@ -35,6 +37,7 @@ private:
   GShader GetShader() {return _shader;}
   
   friend class cMGraphicsOSX;
+  cMVector4Df mColor;
 };
 
 } // End of namespace Maximus

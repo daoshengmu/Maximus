@@ -43,17 +43,19 @@ static CVReturn Heartbeat (		CVDisplayLinkRef displayLink,
 	
 	cbCtx = (CallbackContext*) malloc(sizeof(CallbackContext));
 	
-    NSOpenGLPixelFormat* 	pixelFormat = [[[NSOpenGLPixelFormat alloc] initWithAttributes:attrs]autorelease];
+  NSOpenGLPixelFormat* 	pixelFormat = [[[NSOpenGLPixelFormat alloc]
+                                        initWithAttributes:attrs]autorelease];
     
-    self = [super initWithFrame:frame pixelFormat: pixelFormat];
-    if (self) 
+  self = [super initWithFrame:frame pixelFormat: pixelFormat];
+  if (self)
 	{
-        self.wantsBestResolutionOpenGLSurface = YES;
-        pf = pixelFormat;
+    self.wantsBestResolutionOpenGLSurface = YES;
+    pf = pixelFormat;
 		[self setFrame:frame];
 		cbCtx->ctx = [self openGLContext];
 		[cbCtx->ctx makeCurrentContext];
-        const char* pathToResources = [[[NSBundle mainBundle] resourcePath] cStringUsingEncoding:NSASCIIStringEncoding];
+    const char* pathToResources = [[[NSBundle mainBundle] resourcePath]
+                                   cStringUsingEncoding:NSASCIIStringEncoding];
 		cbCtx->renderer = new OpenGLRenderer(pathToResources, strlen(pathToResources));
 		NSRect bounds = [self bounds];
 		NSRect pixels = [self convertRectToBacking:bounds];

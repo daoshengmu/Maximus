@@ -43,6 +43,7 @@ public:
   int GetVertexSize();
   int GetNumIndices();
   shared_ptr<cMMatrix3Df> GetWorldMatrix();
+  shared_ptr<Material> GetMaterial();
   
 protected:
   // Get from RenderItem
@@ -62,7 +63,6 @@ private:
   GBuffer GetVertexArrayObject();
   GBuffer GetVertexBuffer();
   GBuffer GetIndexBuffer();
-  shared_ptr<Material> GetMaterial();
 
   // TODO: Material needs to be created by MRender
   // and set to primitive.

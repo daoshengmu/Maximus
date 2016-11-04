@@ -24,6 +24,7 @@ public:
   RenderItem();
   void Init(IMGraphics* aGraphics);
   shared_ptr<Surface> GetSurface();
+  void SetMaterialColor(const cMVector4Df& aColor);
   
 protected:
   shared_ptr<Surface> _surface;

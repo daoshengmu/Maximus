@@ -20,14 +20,14 @@ struct Vertex
   //  float tangentX, tangentY, tangentZ;
   //  float binormalX, binormalY, binormalZ;
 };
-  
+
 const float Sphere::sRadius = 0.5f;
 const uint32_t Sphere::sLatitude = 30;
 const uint32_t Sphere::sLongitude = 30;
 bool Sphere::mInitData = false;
 const uint32_t Sphere::sSphereNumIndices = (sLatitude - 2) * sLongitude * 2 * 3;
 const uint32_t Sphere::sSphereNumVertices = (sLatitude - 2) * (sLongitude + 1) + 2;
-  
+
 Sphere::Sphere()
 {
   _numVertices = sSphereNumVertices;
@@ -63,7 +63,7 @@ void Sphere::BuildData()
       x = sin(theta) * cos(phi);
       y = cos(theta);
       z = -sin(theta) * sin(phi);
-      
+
       vertices[index].x = x * sRadius;
       vertices[index].y = y * sRadius;
       vertices[index].z = z * sRadius;

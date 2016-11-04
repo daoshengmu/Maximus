@@ -129,6 +129,7 @@ static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
   sphere.Scale(cMVector3Df(3, 3, 3));
   sphere.SetPosition(cMVector3Df(3, 0, 0));
   cbCtx->maxiRenderer->AddRenderItem(&sphere);
+  sphere.SetMaterialColor(cMVector4Df(0, 0, 1, 1));
 }
 
 - (BOOL)acceptsFirstResponder

@@ -62,6 +62,7 @@ void Surface::Init(IMGraphics* aGraphics, int aNumVertics, int aVertexSize,
   
 shared_ptr<Material> Surface::GetMaterial()
 {
+  assert(_material);  // Material is not created yet, do you already AddRenderItem?
   return _material;
 }
   

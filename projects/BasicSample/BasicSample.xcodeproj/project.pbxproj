@@ -28,6 +28,7 @@
 		B73E32701DB4B67D00C155CF /* Quad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B73E326E1DB4B67D00C155CF /* Quad.cpp */; };
 		B76F1C101C81E5F10011E3D2 /* MRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B76F1C0E1C81E5F10011E3D2 /* MRender.cpp */; };
 		B789B1DE1DC1CC6900292F66 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B789B1DD1DC1CC6900292F66 /* Sphere.cpp */; };
+		B7994A621DCCDEEB0015D889 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7994A611DCCDEEB0015D889 /* Material.cpp */; };
 		B7A882B51D7A7DA9001222E0 /* shader in Resources */ = {isa = PBXBuildFile; fileRef = B7A882B41D7A7DA9001222E0 /* shader */; };
 		B7A882B81D7A7E66001222E0 /* context in Resources */ = {isa = PBXBuildFile; fileRef = B7A882B71D7A7E66001222E0 /* context */; };
 		B7B3C54E1DBD8D3100ABA0D9 /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7B3C54D1DBD8D3100ABA0D9 /* Cube.cpp */; };
@@ -68,6 +69,7 @@
 		B76F1C0E1C81E5F10011E3D2 /* MRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MRender.cpp; path = ../../MRender.cpp; sourceTree = "<group>"; };
 		B76F1C0F1C81E5F10011E3D2 /* MRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRender.h; path = ../../MRender.h; sourceTree = "<group>"; };
 		B789B1DD1DC1CC6900292F66 /* Sphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sphere.cpp; path = primitive/Sphere.cpp; sourceTree = "<group>"; };
+		B7994A611DCCDEEB0015D889 /* Material.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Material.cpp; path = material/Material.cpp; sourceTree = "<group>"; };
 		B7A882B41D7A7DA9001222E0 /* shader */ = {isa = PBXFileReference; lastKnownFileType = folder; name = shader; path = ../../shader; sourceTree = "<group>"; };
 		B7A882B71D7A7E66001222E0 /* context */ = {isa = PBXFileReference; lastKnownFileType = folder; name = context; path = ../../context; sourceTree = "<group>"; };
 		B7B3C54D1DBD8D3100ABA0D9 /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cube.cpp; path = primitive/Cube.cpp; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		B701D56F1C834C5600FEC77D /* Maximus */ = {
 			isa = PBXGroup;
 			children = (
+				B7994A611DCCDEEB0015D889 /* Material.cpp */,
 				B789B1DD1DC1CC6900292F66 /* Sphere.cpp */,
 				B7B3C54D1DBD8D3100ABA0D9 /* Cube.cpp */,
 				B7D1E2CF1DB88E8E00DB9915 /* Surface.cpp */,
@@ -240,7 +243,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
@@ -309,6 +312,7 @@
 				B73E32681DB4B63700C155CF /* ContextOSX.mm in Sources */,
 				B7B3C54E1DBD8D3100ABA0D9 /* Cube.cpp in Sources */,
 				B76F1C101C81E5F10011E3D2 /* MRender.cpp in Sources */,
+				B7994A621DCCDEEB0015D889 /* Material.cpp in Sources */,
 				B73E326A1DB4B65A00C155CF /* GLView.mm in Sources */,
 				B789B1DE1DC1CC6900292F66 /* Sphere.cpp in Sources */,
 				B7D1E2D01DB88E8E00DB9915 /* Surface.cpp in Sources */,
@@ -399,20 +403,34 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx*]" = _DEBUG;
 				"GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS[sdk=macosx*]" = __MOS_OSX__;
 				"GCC_VERSION[arch=*]" = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
@@ -427,16 +445,30 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				"GCC_PREPROCESSOR_DEFINITIONS[sdk=macosx*]" = "";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = __MOS_OSX__;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;

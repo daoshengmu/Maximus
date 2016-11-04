@@ -20,12 +20,14 @@
 #include "util/MMath.h"
 
 #include "util/MVector3D.h"
+#include "util/MVector4D.h"
 #include "util/MMatrix3D.h"
 
 namespace Maximus
 {
 
 typedef cMVector3D<float> cMVector3Df;
+typedef cMVector4D<float> cMVector4Df;
 typedef cMMatrix3D<float> cMMatrix3Df;
 
 } // End of namespace Maximus

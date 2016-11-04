@@ -27,13 +27,14 @@ public:
       "in vec4 g_vColorOS; \n"
       
       "uniform mat4 g_worldViewProjMatrix; \n"
+      "uniform vec4 g_mtrColor; \n"
       
       "out vec4 outColor; \n"
       "\n"
       "void main(void) \n"
       "{ \n"
       " gl_Position =  vec4( g_vPositionOS, 1.0 ) * g_worldViewProjMatrix; \n"
-      " outColor = g_vColorOS;"
+      " outColor = g_vColorOS * g_mtrColor;"
       "} \n";
       
       _fragmentShader =
