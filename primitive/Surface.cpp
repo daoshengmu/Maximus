@@ -32,12 +32,6 @@ Surface::~Surface()
   glDeleteBuffers(1, &_indexBuffer);
   glDeleteVertexArrays(1, &_vertexArrayObject);
 }
-
-//Primitive& Primitive::operator=(const Primitive& rValue)
-//{
-//  int tet;
-//  return *this;
-//}
   
 void Surface::Init(IMGraphics* aGraphics, int aNumVertics, int aVertexSize,
                    int aNumIndices, const float* aVertices, const uint16_t* aIndices,

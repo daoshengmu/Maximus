@@ -22,6 +22,7 @@ class RenderItem : public cMObject3D
 {
 public:
   RenderItem();
+
   void Init(IMGraphics* aGraphics);
   shared_ptr<Surface> GetSurface();
   void SetMaterialColor(const cMVector4Df& aColor);

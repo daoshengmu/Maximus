@@ -23,6 +23,8 @@ RenderItem::RenderItem()
 
 void RenderItem::Init(IMGraphics* aGraphics)
 {
+  assert(!_surface); // To make sure this RenderItem be created only once.
+  
   _surface = make_shared<Surface>();
   _surface->Init(aGraphics, _numVertices, _vertexSize,
                  _numIndices, _vertices, _indices, mWorldMtx);

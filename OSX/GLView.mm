@@ -30,10 +30,11 @@ static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
                           void *displayLinkContext )
 {
   CallbackContext* ctx = (CallbackContext*) displayLinkContext;
-	CGLSetCurrentContext((CGLContextObj) [ctx->ctx CGLContextObj]);
+  CGLSetCurrentContext((CGLContextObj) [ctx->ctx CGLContextObj]);
+  ctx->maxiRenderer->Update();
   ctx->maxiRenderer->Draw();
-	CGLFlushDrawable((CGLContextObj) [ctx->ctx CGLContextObj]);
-	return kCVReturnSuccess;
+  CGLFlushDrawable((CGLContextObj) [ctx->ctx CGLContextObj]);
+  return kCVReturnSuccess;
 }
 
 @implementation GLView

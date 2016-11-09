@@ -34,6 +34,7 @@ class cMRender
 {
 public:
   void Init(int width, int height);
+  void Update();
   void Draw();
   void SetViewport(int x, int y, int w, int h);
   void Terminate();
@@ -55,7 +56,7 @@ private:
   cMCamera*   _camera;
   cMMatrix3Df _mvpMatrix;
   Rect       _viewport;
-  vector<shared_ptr<Surface>> _surfaces;
+  vector<RenderItem> mItems;
 };
 
 }

@@ -75,10 +75,7 @@ void cMRender::AddRenderItem(RenderItem* aRenderItem)
 {
   // Init primitives
   aRenderItem->Init(_graphics);
-  aRenderItem->Update();
-  shared_ptr<Surface> surf = aRenderItem->GetSurface();
-
-  _surfaces.push_back(surf);
+  mItems.push_back(*aRenderItem);
 }
   
 void cMRender::SetViewport(int x, int y, int w, int h)
@@ -89,11 +86,17 @@ void cMRender::SetViewport(int x, int y, int w, int h)
   // XXX TODO reset the projection matrix
 }
 
+void cMRender::Update()
+{
+  _camera->Update();
+  
+  for (uint32_t i = 0; i < mItems.size(); i++) {
+    mItems[i].Update();
+  }
+}
+  
 void cMRender::Draw()
 {
-  // TODO: put to cMRender::Update();
-  _camera->Update();
-
   _graphics->BeginFrame();
   
   const cMMatrix3Df* viewMtx = _camera->GetViewMatrix();
@@ -102,15 +105,15 @@ void cMRender::Draw()
   cMMatrix3Df vpMtx(*viewMtx);
   vpMtx *= *projMtx;
   
-  for (uint i = 0; i < _surfaces.size(); ++i) {
-    shared_ptr<cMMatrix3Df> modelMtx = _surfaces[i]->GetWorldMatrix();
+  for (uint i = 0; i < mItems.size(); ++i) {
+    shared_ptr<cMMatrix3Df> modelMtx = mItems[i].GetSurface()->GetWorldMatrix();
     
     _mvpMatrix = *modelMtx;
     _mvpMatrix *= vpMtx;
     
-    _graphics->DrawTriangle(_surfaces[i].get(), &_mvpMatrix);
-    // End of draw
+    _graphics->DrawTriangle(mItems[i].GetSurface().get(), &_mvpMatrix);
   }
+  // End of draw
   _graphics->EndFrame();
 }
 
