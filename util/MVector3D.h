@@ -7,8 +7,8 @@
  *
  */
 
-#ifndef __MVECTOR3D_H__
-#define __MVECTOR3D_H__
+#ifndef __M_VECTOR3D_H__
+#define __M_VECTOR3D_H__
 
 namespace Maximus
 {
@@ -39,7 +39,7 @@ public:
 	// @params: yVal z element 
 	//--------------------------------
  	cMVector3D(Type xVal, Type yVal, Type zVal)
-	: x(xVal), y(yVal), z(zVal) {};
+    : x(xVal), y(yVal), z(zVal) {};
 	
 	//---------------------------------------∫∫-----------------------------------------------
     /// @brief Copy constructor
@@ -47,26 +47,26 @@ public:
     /// @param rhs copy from
     //--------------------------------------------------------------------------------------
 	cMVector3D(const cMVector3D<Type>& rhs)
-	: x(rhs.x), y(rhs.y), z(rhs.z) {};
+    : x(rhs.x), y(rhs.y), z(rhs.z) {};
 	
 	
-	void scale( Type val )
+	void Scale( Type val )
 	{
 		x *= val;
 		y *= val;
 		z *= val;
 	}
     
-    cMVector3D<Type>& operator *= (Type val)
-    {
-        x *= val;
-        y *= val;
-        z *= val;
-        
-        return (*this);
-    }
+  cMVector3D<Type>& operator *= (Type val)
+  {
+      x *= val;
+      y *= val;
+      z *= val;
+      
+      return (*this);
+  }
 
 };
 } //  End of namespace Maximus
 
-#endif
+#endif // __M_VECTOR3D_H__

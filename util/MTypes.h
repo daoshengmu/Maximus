@@ -7,8 +7,8 @@
  *
  */
 
-#ifndef __MTYPES_H__
-#define __MTYPES_H__
+#ifndef __M_TYPES_H__
+#define __M_TYPES_H__
 
 #ifdef __MOS_OSX__
 #define __OGL__
@@ -39,6 +39,6 @@ namespace Maximus
 #error Need to define other graphics api types
 #endif
 
-}
+} // End of namespace Maximus
 
-#endif  // __MTYPES_H__
+#endif  // __M_TYPES_H__

@@ -7,8 +7,8 @@
  *
  */
 
-#ifndef __MVECTOR4D_H__
-#define __MVECTOR4D_H__
+#ifndef __M_VECTOR4D_H__
+#define __M_VECTOR4D_H__
 
 namespace Maximus
 {
@@ -52,7 +52,7 @@ namespace Maximus
     : x(rhs.x), y(rhs.y), z(rhs.z), w(rhs.w) {};
     
     
-    void scale(Type val)
+    void Scale(Type val)
     {
       x *= val;
       y *= val;
@@ -73,4 +73,4 @@ namespace Maximus
   };
 } //  End of namespace Maximus
 
-#endif
+#endif // __M_VECTOR4D_H__

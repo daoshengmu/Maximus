@@ -34,12 +34,16 @@ public:
 	void GetPosition(cMVector3Df* vect);
   void SetPosition(const cMVector3Df& pos);
   void Scale(const cMVector3Df& aScale);
+  void RotateX(float aDegree);
+  void RotateY(float aDegree);
+  void RotateZ(float aDegree);
 
 protected:
   shared_ptr<cMMatrix3Df>	mWorldMtx;
   bool		mUpdate;
   cMVector3Df	mOrigin;
   cMVector3Df	mScale;
+  MQuaternionf mRotate;
 
 };
 }

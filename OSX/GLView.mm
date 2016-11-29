@@ -121,10 +121,12 @@ static CVReturn Heartbeat(CVDisplayLinkRef displayLink,
   
   quad.Scale(cMVector3Df(1, 1, 1));
   quad.SetPosition(cMVector3Df(0, 0, 0));
+  quad.RotateZ(45.0f);
   cbCtx->maxiRenderer->AddRenderItem(&quad);
   
   cube.Scale(cMVector3Df(1, 1, 1));
   cube.SetPosition(cMVector3Df(0, 3, 0));
+  cube.RotateY(45.0f);
   cbCtx->maxiRenderer->AddRenderItem(&cube);
   
   sphere.Scale(cMVector3Df(3, 3, 3));
