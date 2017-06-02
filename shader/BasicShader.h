@@ -22,7 +22,7 @@ public:
   BasicShader()
   {
       _vertexShader =
-      "#version 150 \n"
+      "#version 410 \n"
       "in vec3 g_vPositionOS; \n"
       "in vec4 g_vColorOS; \n"
       
@@ -38,7 +38,7 @@ public:
       "} \n";
       
       _fragmentShader =
-      "#version 150 \n"
+      "#version 410 \n"
       "in vec4 outColor; \n"
       "out vec4 fragColor; \n"
       "\n"
